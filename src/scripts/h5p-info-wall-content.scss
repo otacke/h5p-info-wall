@@ -1,0 +1,17 @@
+.h5p-info-wall-content {
+  min-width: 20em;
+  width: 100%;
+
+  .h5p-info-wall-message {
+    width: 100%;
+    text-align: center;
+
+    &.h5p-info-wall-display-none {
+      display: none;
+    }
+
+    .h5p-info-wall-query-text {
+      font-style: italic;
+    }
+  }
+}

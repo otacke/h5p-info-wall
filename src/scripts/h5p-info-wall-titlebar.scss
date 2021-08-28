@@ -1,0 +1,32 @@
+.h5p-info-wall-titlebar {
+  align-items: center;
+  border-bottom: 0.1em solid #c7c7c7;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  padding-bottom: .25em;
+  width: 100%;
+
+  .h5p-info-wall-header {
+    flex: 1 1 auto;
+    width: 100%;
+    overflow: hidden;
+
+    h1 {
+      margin: 0;
+      font-size: 1.25em;
+      font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .h5p-info-wall-searchbox {
+    font-size: 1em;
+    border: 1px solid #c7c7c7;
+    border-radius: 0.25em;
+    flex: 0 0 auto;
+    padding: .25em .4em;
+  }
+}

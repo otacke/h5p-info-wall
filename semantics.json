@@ -1,0 +1,227 @@
+[
+  {
+    "name": "infoWall",
+    "type": "group",
+    "importance": "high",
+    "expanded": true,
+    "widget": "infoWall",
+    "fields": [
+      {
+        "name": "header",
+        "type": "text",
+        "label": "Header",
+        "description": "Optional header for the information wall.",
+        "importance": "high",
+        "optional": true
+      },
+      {
+        "name": "propertiesGroup",
+        "type": "group",
+        "label": "Properties",
+        "importance": "high",
+        "expanded": false,
+        "fields": [
+          {
+            "name": "properties",
+            "type": "list",
+            "label": "Properties",
+            "description": "Properties for the entries",
+            "importance": "high",
+            "entity": "property",
+            "min": 1,
+            "widgets": [
+              {
+                "name": "VerticalTabs",
+                "label": "Default"
+              }
+            ],
+            "field": {
+              "name": "propertyItems",
+              "type": "group",
+              "label": "Property items",
+              "fields": [
+                {
+                  "name": "label",
+                  "type": "text",
+                  "label": "Label",
+                  "default": "Unnamed"
+                },
+                {
+                  "name": "showLabel",
+                  "type": "boolean",
+                  "label": "Show property label",
+                  "default": false,
+                  "optional": true
+                },
+                {
+                  "name": "searchInProperty",
+                  "type": "boolean",
+                  "label": "Enable searching in the property",
+                  "default": true,
+                  "optional": true
+                },
+                {
+                  "name": "styling",
+                  "type": "group",
+                  "label": "Styling",
+                  "fields": [
+                    {
+                      "name": "bold",
+                      "type": "boolean",
+                      "label": "Bold",
+                      "optional": true
+                    },
+                    {
+                      "name": "italic",
+                      "type": "boolean",
+                      "label": "Italic",
+                      "optional": true
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "dummy",
+            "type": "text",
+            "widget": "none"
+          }
+        ]
+      },
+      {
+        "name": "panels",
+        "type": "list",
+        "label": "Panels",
+        "description": "Panels for the wall",
+        "importance": "high",
+        "entity": "entry",
+        "min": 1,
+        "widgets": [
+          {
+            "name": "VerticalTabs",
+            "label": "Default"
+          }
+        ],
+        "field": {
+          "name": "entriesGroup",
+          "type": "group",
+          "label": "Entry items",
+          "fields": [
+            {
+              "name": "image",
+              "type": "library",
+              "label": "Image",
+              "optional": true,
+              "options": [
+                "H5P.Image 1.1"
+              ]
+            },
+            {
+              "name": "entries",
+              "type": "list",
+              "label": "Entries",
+              "description": "Entries for the properties",
+              "entity": "value",
+              "widgets": [
+                {
+                  "name": "InfoWallPassiveList",
+                  "label": "Default"
+                }
+              ],
+              "min": 1,
+              "field": {
+                "name": "value",
+                "type": "text",
+                "label": "Label to be changed automatically",
+                "optional": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "behaviour",
+        "type": "group",
+        "importance": "low",
+        "label": "Behavioural settings",
+        "fields": [
+          {
+            "name": "useFallbackImage",
+            "type": "boolean",
+            "label": "Use fallback for missing images",
+            "default": false,
+            "optional": true
+          },
+          {
+            "name": "fallbackImage",
+            "type": "library",
+            "label": "Image",
+            "optional": true,
+            "options": [
+              "H5P.Image 1.1"
+            ],
+            "widget": "showWhen",
+            "showWhen": {
+              "rules": [
+                {
+                  "field": "useFallbackImage",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          {
+            "name": "imageWidth",
+            "label": "Image width",
+            "type": "number",
+            "importance": "low",
+            "description": "Image width in px.",
+            "default": 150
+          },
+          {
+            "name": "imageHeight",
+            "label": "Image height",
+            "type": "number",
+            "importance": "low",
+            "description": "Image height in px.",
+            "default": 150
+          },
+          {
+            "name": "offerFilterField",
+            "label": "Offer filter field",
+            "type": "boolean",
+            "importance": "low",
+            "description": "If checked, users will be able to filter the info wall.",
+            "default": true,
+            "optional": true
+          }
+        ]
+      },
+      {
+        "name": "l10n",
+        "type": "group",
+        "common": true,
+        "label": "User interface",
+        "importance": "low",
+        "fields": [
+          {
+            "name": "noEntriesError",
+            "type": "text",
+            "label": "No content entered",
+            "importance": "low",
+            "default": "The author did not enter anything."
+          },
+          {
+            "name": "noMatchesForFilter",
+            "type": "text",
+            "label": "No matches found",
+            "description": "@query is a placeholder and will be replaced by the respective query that was entered.",
+            "importance": "low",
+            "default": "There are not matches for @query."
+          }
+        ]
+      }
+    ]
+  }
+]
