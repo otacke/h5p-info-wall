@@ -18,7 +18,7 @@ export default class InfoWallContent {
     // Determine searchable ids according to properties
     const searchablePropertyIds = this.params.properties
       .reduce((ids, property, index) => {
-        return property.showLabel ? [...ids, index] : ids;
+        return property.searchInProperty ? [...ids, index] : ids;
       }, []);
 
     // Determine if filter field shold be set
