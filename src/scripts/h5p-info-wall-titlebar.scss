@@ -1,11 +1,10 @@
 .h5p-info-wall-titlebar {
   align-items: center;
-  border-bottom: 0.1em solid #c7c7c7;
+  background-color: rgba(0, 0, 0, .075);
   display: flex;
   flex-direction: row;
-  margin-bottom: 1em;
-  padding-bottom: .25em;
-  width: 100%;
+  padding: .5em 1em;
+  width: calc(100% - 2em);
 
   .h5p-info-wall-header {
     flex: 1 1 auto;
