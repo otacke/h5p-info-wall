@@ -219,7 +219,15 @@
             "description": "@query is a placeholder and will be replaced by the respective query that was entered.",
             "importance": "low",
             "default": "There are not matches for @query."
-          }
+          },
+          {
+            "name": "enterToFilter",
+            "type": "text",
+            "label": "Enter to filter",
+            "description": "Message for screen readers",
+            "importance": "low",
+            "default": "Enter a query to filter the content for relevant entries."
+          },
         ]
       }
     ]

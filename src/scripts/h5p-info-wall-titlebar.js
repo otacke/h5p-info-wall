@@ -1,5 +1,7 @@
 import "./h5p-info-wall-titlebar.scss";
 
+import Dictionary from './h5p-info-wall-dictionary';
+
 export default class InfoWallTitlebar {
   /**
    * @constructor
@@ -31,6 +33,7 @@ export default class InfoWallTitlebar {
     if (params.searchBox) {
       const searchBox = document.createElement('input');
       searchBox.classList.add('h5p-info-wall-searchbox');
+      searchBox.setAttribute('aria-label', Dictionary.get('enterToFilter'));
       searchBox.addEventListener('keyup', () => {
         this.callbacks.onSearchChange(searchBox.value);
       });

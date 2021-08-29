@@ -27,7 +27,8 @@ export default class InfoWall extends H5P.EventDispatcher {
       },
       l10n: {
         'noEntriesError': 'The author did not enter anything.',
-        'noMatchesForFilter': 'There are not matches for @query.'
+        'noMatchesForFilter': 'There are not matches for @query.',
+        'enterToFilter': 'Enter a query to filter the content for relevant entries.'
       }
     }, params.infoWall);
 
