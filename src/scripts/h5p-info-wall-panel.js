@@ -44,7 +44,7 @@ export default class InfoWallPanel {
       // Text
       const entryText = document.createElement('span');
       entryText.classList.add('h5p-info-wall-panel-entry-text');
-      entryText.innerHTML = Util.stripHTML(Util.htmlDecode(entry.text), 'script');
+      entryText.innerHTML = Util.stripHTML(Util.htmlDecode(entry.text), ['script', 'iframe']);
       entryWrapper.appendChild(entryText);
 
       entries.appendChild(entryWrapper);
