@@ -133,6 +133,7 @@
               "field": {
                 "name": "value",
                 "type": "text",
+                "widget": "textarea",
                 "label": "Label to be changed automatically",
                 "optional": true
               }
