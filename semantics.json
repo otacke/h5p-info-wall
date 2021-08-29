@@ -227,7 +227,7 @@
             "description": "Message for screen readers",
             "importance": "low",
             "default": "Enter a query to filter the content for relevant entries."
-          },
+          }
         ]
       }
     ]
