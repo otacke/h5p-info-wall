@@ -8,6 +8,8 @@ export default class InfoWallPanel {
   constructor(params = {}) {
     this.params = params;
 
+    this.visible = true;
+
     // Panel
     this.panel = document.createElement('div');
     this.panel.classList.add('h5p-info-wall-panel');
@@ -108,13 +110,40 @@ export default class InfoWallPanel {
    */
   show() {
     this.panel.classList.remove('h5p-info-wall-display-none');
+    this.visible = true;
   }
 
   /**
    * Hide panel.
    */
   hide() {
+    this.visible = false;
     this.panel.classList.add('h5p-info-wall-display-none');
+  }
+
+  /**
+   * Set background color.
+   * @param {boolean} state If true, sets background. If false, removes it.
+   */
+  setBackground(state) {
+    if (typeof state !== 'boolean') {
+      return;
+    }
+
+    if (state) {
+      this.panel.classList.add('h5p-info-wall-background');
+    }
+    else {
+      this.panel.classList.remove('h5p-info-wall-background');
+    }
+  }
+
+  /**
+   * Determine whether the panel is visible.
+   * @return {boolean} True, if panel is visible. Else false.
+   */
+  isVisible() {
+    return this.visible;
   }
 
   /**

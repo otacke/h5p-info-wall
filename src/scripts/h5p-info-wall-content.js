@@ -89,6 +89,7 @@ export default class InfoWallContent {
       this.content.appendChild(panel.getDOM());
     });
 
+    this.handlePanelsFiltered();
   }
 
   /**
@@ -97,6 +98,22 @@ export default class InfoWallContent {
    */
   getDOM() {
     return this.content;
+  }
+
+  /**
+   * Handle panel filtered.
+   */
+  handlePanelsFiltered() {
+    if (this.params.alternateBackground) {
+      let background = false;
+
+      this.panels.forEach(panel => {
+        if (panel.isVisible()) {
+          panel.setBackground(background);
+          background = !background;
+        }
+      });
+    }
   }
 
   /**
@@ -114,6 +131,9 @@ export default class InfoWallContent {
       this.panels.forEach(panel => {
         panel.show();
       });
+
+      this.handlePanelsFiltered();
+
       return;
     }
 
@@ -137,6 +157,7 @@ export default class InfoWallContent {
     }
     else {
       this.message.classList.add('h5p-info-wall-display-none');
+      this.handlePanelsFiltered();
     }
   }
 }

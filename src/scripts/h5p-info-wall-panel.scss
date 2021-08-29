@@ -8,6 +8,10 @@
     margin-bottom: 2em;
   }
 
+  &.h5p-info-wall-background {
+    background-color: rgba(0, 0, 0, .025);
+  }
+
   .h5p-info-wall-panel-entries {
     display: flex;
     flex-direction: column;

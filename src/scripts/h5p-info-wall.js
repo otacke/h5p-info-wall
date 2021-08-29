@@ -23,7 +23,8 @@ export default class InfoWall extends H5P.EventDispatcher {
         useFallbackImage: false,
         imageWidth: 150,
         imageHeight: 150,
-        offerFilterField: true
+        offerFilterField: true,
+        alternateBackground: true
       },
       l10n: {
         'noEntriesError': 'The author did not enter anything.',
@@ -62,7 +63,8 @@ export default class InfoWall extends H5P.EventDispatcher {
       imageSize: {
         width: this.params.behaviour.imageWidth,
         height: this.params.behaviour.imageHeight
-      }
+      },
+      alternateBackground: this.params.behaviour.alternateBackground
     });
   }
 

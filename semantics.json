@@ -188,6 +188,15 @@
             "default": 150
           },
           {
+            "name": "alternateBackground",
+            "label": "Alternate panel background",
+            "type": "boolean",
+            "importance": "low",
+            "description": "If checked, each 2nd panel will have slightly darker background than the others.",
+            "default": true,
+            "optional": true
+          },
+          {
             "name": "offerFilterField",
             "label": "Offer filter field",
             "type": "boolean",
