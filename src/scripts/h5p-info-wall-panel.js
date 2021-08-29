@@ -1,5 +1,7 @@
 import "./h5p-info-wall-panel.scss";
 
+import Util from './h5p-info-wall-util';
+
 export default class InfoWallPanel {
   /**
    * @constructor
@@ -42,7 +44,7 @@ export default class InfoWallPanel {
       // Text
       const entryText = document.createElement('span');
       entryText.classList.add('h5p-info-wall-panel-entry-text');
-      entryText.innerText = entry.text;
+      entryText.innerHTML = Util.stripHTML(Util.htmlDecode(entry.text), 'script');
       entryWrapper.appendChild(entryText);
 
       entries.appendChild(entryWrapper);
