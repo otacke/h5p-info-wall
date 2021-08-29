@@ -95,7 +95,7 @@
         "label": "Panels",
         "description": "Panels for the wall",
         "importance": "high",
-        "entity": "entry",
+        "entity": "panel",
         "min": 1,
         "widgets": [
           {
@@ -145,6 +145,7 @@
         "type": "group",
         "importance": "low",
         "label": "Behavioural settings",
+        "description": "These options will let you control how the task behaves.",
         "fields": [
           {
             "name": "useFallbackImage",
