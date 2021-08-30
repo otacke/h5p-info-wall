@@ -13,6 +13,9 @@
     flex: 1 1 auto;
 
     .h5p-info-wall-panel-entries {
+      border-spacing: 0 .5em;
+      margin: -0.5em 0;
+
       .h5p-info-wall-panel-entry {
         &:not(:last-child) {
           margin-bottom: 0.5em;
