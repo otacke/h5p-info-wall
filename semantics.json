@@ -63,7 +63,7 @@
                 {
                   "name": "styling",
                   "type": "group",
-                  "label": "Styling",
+                  "label": "Styling override",
                   "fields": [
                     {
                       "name": "bold",

@@ -32,7 +32,7 @@
                     "label": "Enable searching in the property"
                   },
                   {
-                    "label": "Styling",
+                    "label": "Styling override",
                     "fields": [
                       {
                         "label": "Bold"

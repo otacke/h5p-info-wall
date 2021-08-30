@@ -32,7 +32,7 @@
                     "label": "Lass das Merkmal durchsuchbar sein"
                   },
                   {
-                    "label": "Styling",
+                    "label": "Styling überschreiben",
                     "fields": [
                       {
                         "label": "Fett"
