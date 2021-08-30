@@ -60,6 +60,9 @@
             "label": "Einträge",
             "fields": [
               {
+                "label": "Titel für die Leiste"
+              },
+              {
                 "label": "Bild"
               },
               {

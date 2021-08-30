@@ -60,6 +60,9 @@
             "label": "Entry items",
             "fields": [
               {
+                "label": "Title for panel"
+              },
+              {
                 "label": "Image"
               },
               {
