@@ -55,7 +55,7 @@ export default class InfoWallPanel {
     this.imageWrapper = document.createElement('div');
     this.imageWrapper.classList.add('h5p-info-wall-panel-image-wrapper-outer');
     this.imageWrapper.style.width = `${params.imageSize.width}px`;
-    this.imageWrapper.style.height = `${params.imageSize.width}px`;
+    this.imageWrapper.style.height = `${params.imageSize.height}px`;
     this.panel.appendChild(this.imageWrapper);
 
     // Image
@@ -65,7 +65,7 @@ export default class InfoWallPanel {
       this.backgroundImage.classList.add('h5p-info-wall-panel-image-background');
       this.backgroundImage.src = H5P.getPath(params.image.params.file.path, params.contentId);
       this.backgroundImage.style.width = `${params.imageSize.width}px`;
-      this.backgroundImage.style.height = `${params.imageSize.width}px`;
+      this.backgroundImage.style.height = `${params.imageSize.height}px`;
       this.imageWrapper.appendChild(this.backgroundImage);
 
       // Image centered relative to outer wrapper
