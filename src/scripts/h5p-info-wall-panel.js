@@ -14,10 +14,14 @@ export default class InfoWallPanel {
     this.panel = document.createElement('div');
     this.panel.classList.add('h5p-info-wall-panel');
 
+    const entriesWrapper = document.createElement('div');
+    entriesWrapper.classList.add('h5p-info-wall-panel-entries-wrapper');
+    this.panel.appendChild(entriesWrapper);
+
     // Entries
     const entries = document.createElement('table');
     entries.classList.add('h5p-info-wall-panel-entries');
-    this.panel.appendChild(entries);
+    entriesWrapper.appendChild(entries);
 
     params.entries.forEach(entry => {
       const entryWrapper = document.createElement('tr');
