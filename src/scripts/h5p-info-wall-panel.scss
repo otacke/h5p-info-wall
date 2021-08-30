@@ -10,14 +10,9 @@
   }
 
   .h5p-info-wall-panel-entries {
-    display: flex;
-    flex-direction: column;
     flex: 1 1 auto;
 
     .h5p-info-wall-panel-entry {
-      display: flex;
-      flex-direction: row;
-
       &:not(:last-child) {
         margin-bottom: 0.5em;
       }
@@ -31,8 +26,12 @@
       }
 
       .h5p-info-wall-panel-entry-label {
-        flex: 0 0 auto;
-        margin-right: 0.5em;
+        max-width: 10em;
+        overflow: hidden;
+        padding-right: 0.5em;
+        text-overflow: ellipsis;
+        vertical-align: top;
+        white-space: nowrap;
 
         &::after {
           content: ':'
@@ -40,6 +39,9 @@
       }
 
       .h5p-info-wall-panel-entry-text {
+        vertical-align: top;
+        width: 100%;
+
         p:first-child {
           margin-top: 0;
         }
@@ -91,15 +93,6 @@
 
     .h5p-info-wall-panel-image-wrapper-outer {
       margin-bottom: .5em;
-    }
-
-    .h5p-info-wall-panel-entries {
-      align-items: center;
-
-      .h5p-info-wall-panel-entry {
-        flex-direction: column;
-        text-align: center;
-      }
     }
   }
 }

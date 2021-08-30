@@ -15,12 +15,12 @@ export default class InfoWallPanel {
     this.panel.classList.add('h5p-info-wall-panel');
 
     // Entries
-    const entries = document.createElement('div');
+    const entries = document.createElement('table');
     entries.classList.add('h5p-info-wall-panel-entries');
     this.panel.appendChild(entries);
 
     params.entries.forEach(entry => {
-      const entryWrapper = document.createElement('div');
+      const entryWrapper = document.createElement('tr');
       entryWrapper.classList.add('h5p-info-wall-panel-entry');
 
       // Styling
@@ -33,14 +33,17 @@ export default class InfoWallPanel {
 
       // Label
       if (entry.label) {
-        const entryLabel = document.createElement('span');
+        const entryLabel = document.createElement('td');
         entryLabel.classList.add('h5p-info-wall-panel-entry-label');
         entryLabel.innerText = entry.label;
         entryWrapper.appendChild(entryLabel);
       }
 
       // Text
-      const entryText = document.createElement('span');
+      const entryText = document.createElement('td');
+      if (!entry.label) {
+        entryText.setAttribute('colspan', 2);
+      }
       entryText.classList.add('h5p-info-wall-panel-entry-text');
       entryText.innerHTML = entry.text;
       entryWrapper.appendChild(entryText);
