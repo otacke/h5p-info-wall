@@ -1,5 +1,7 @@
 import "./h5p-info-wall-panel.scss";
 
+import Util from './h5p-info-wall-util';
+
 export default class InfoWallPanel {
   /**
    * @constructor
@@ -109,7 +111,10 @@ export default class InfoWallPanel {
   contains(query) {
     return this.params.entries
       .filter(entry => entry.searchable)
-      .some(entry => entry.text.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+      .some(entry => {
+        const plainText = Util.htmlDecode(entry.text).toLowerCase();
+        return plainText.indexOf(query.toLowerCase()) !== -1;
+      });
   }
 
   /**

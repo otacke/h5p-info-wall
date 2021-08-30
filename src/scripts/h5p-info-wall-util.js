@@ -20,4 +20,14 @@ export default class Util {
     }
     return arguments[0];
   }
+
+  /**
+   * Retrieve true string from HTML encoded string.
+   * @param {string} input Input string.
+   * @return {string} Output string.
+   */
+  static htmlDecode(input) {
+    const dparser = new DOMParser().parseFromString(input, 'text/html');
+    return dparser.documentElement.textContent;
+  }
 }
