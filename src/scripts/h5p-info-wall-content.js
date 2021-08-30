@@ -56,10 +56,15 @@ export default class InfoWallContent {
       return; // No content to display
     }
 
+    // Set image size to 0/0 if no images are set
+    const imageSize = (this.params.panels.some(panel => panel?.image?.params?.file?.path)) ?
+      this.params.imageSize :
+      { width: 0, height: 0 };
+
     // Append panels
     this.panels = [];
     this.params.panels.forEach(panelParams => {
-      const image = panelParams.image.params.file && panelParams.image.params.file.path ?
+      const image = panelParams?.image?.params?.file?.path ?
         panelParams.image :
         this.params.fallbackImage;
 
@@ -81,7 +86,7 @@ export default class InfoWallContent {
       // Create panel
       const panel = new InfoWallPanel({
         image: image,
-        imageSize: this.params.imageSize,
+        imageSize: imageSize,
         entries: entries,
         contentId: this.params.contentId
       });

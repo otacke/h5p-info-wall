@@ -46,8 +46,7 @@ export default class InfoWall extends H5P.EventDispatcher {
     // Set fallback image
     const fallbackImage = (
       this.params.behaviour.useFallbackImage &&
-      this.params.behaviour.fallbackImage.params.file &&
-      this.params.behaviour.fallbackImage.params.file.path
+      this.params.behaviour.fallbackImage?.params?.file?.path
     ) ?
       this.params.behaviour.fallbackImage :
       null;

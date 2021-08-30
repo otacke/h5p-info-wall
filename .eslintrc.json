@@ -6,7 +6,8 @@
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "ecmaVersion": 2020
   },
   "extends": "eslint:recommended",
   "parserOptions": {
