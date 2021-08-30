@@ -26,6 +26,10 @@ export default class InfoWallPanel {
     entriesWrapper.appendChild(entries);
 
     params.entries.forEach(entry => {
+      if (Util.htmlDecode(entry.text).trim() === '') {
+        return; // No entry
+      }
+
       const entryWrapper = document.createElement('tr');
       entryWrapper.classList.add('h5p-info-wall-panel-entry');
 
