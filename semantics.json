@@ -133,9 +133,23 @@
               "field": {
                 "name": "value",
                 "type": "text",
-                "widget": "textarea",
+                "widget": "html",
                 "label": "Label to be changed automatically",
-                "optional": true
+                "optional": true,
+                "enterMode": "div",
+                "tags": [
+                  "strong",
+                  "em",
+                  "u",
+                  "a",
+                  "ul",
+                  "ol",
+                  "h2",
+                  "h3",
+                  "hr",
+                  "pre",
+                  "code"
+                ]
               }
             }
           ]

@@ -15,7 +15,12 @@
     flex: 1 1 auto;
 
     .h5p-info-wall-panel-entry {
-      margin-bottom: 0.5em;
+      display: flex;
+      flex-direction: row;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5em;
+      }
 
       &.bold {
         font-weight: bold;
@@ -26,10 +31,22 @@
       }
 
       .h5p-info-wall-panel-entry-label {
+        flex: 0 0 auto;
         margin-right: 0.5em;
 
         &::after {
           content: ':'
+        }
+      }
+
+      .h5p-info-wall-panel-entry-text {
+        p:first-child {
+          margin-top: 0;
+        }
+
+        p {
+          margin-bottom: 0;
+          margin-top: .5em;
         }
       }
     }
@@ -80,6 +97,7 @@
       align-items: center;
 
       .h5p-info-wall-panel-entry {
+        flex-direction: column;
         text-align: center;
       }
     }
