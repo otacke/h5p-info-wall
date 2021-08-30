@@ -2,8 +2,8 @@
   "title": "Information Wall",
   "description": "Filterable information wall for different purposes",
   "majorVersion": 0,
-  "minorVersion": 1,
-  "patchVersion": 1,
+  "minorVersion": 2,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Oliver Tacke",
   "license": "MIT",
@@ -42,7 +42,7 @@
     {
       "machineName": "H5PEditor.InfoWall",
       "majorVersion": 0,
-      "minorVersion": 1
+      "minorVersion": 2
     },
     {
       "machineName": "H5PEditor.InfoWallPassiveList",
