@@ -109,6 +109,11 @@
           "label": "Entry items",
           "fields": [
             {
+              "name": "panelTitle",
+              "type": "text",
+              "label": "Title for panel"
+            },
+            {
               "name": "image",
               "type": "library",
               "label": "Image",
