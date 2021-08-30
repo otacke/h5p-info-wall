@@ -141,15 +141,28 @@
                   "strong",
                   "em",
                   "u",
+                  "del",
+                  "sub",
+                  "sup",
                   "a",
                   "ul",
                   "ol",
+                  "h1",
                   "h2",
                   "h3",
+                  "h4",
+                  "h5",
+                  "h6",
                   "hr",
                   "pre",
-                  "code"
-                ]
+                  "code",
+                  "table"
+                ],
+                "font": {
+                  "size": true,
+                  "color": true,
+                  "background": true
+                }
               }
             }
           ]
