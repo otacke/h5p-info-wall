@@ -29,3 +29,11 @@
     padding: .25em .4em;
   }
 }
+
+@media (max-width: 600px) {
+  .h5p-info-wall-titlebar {
+    .h5p-info-wall-searchbox {
+      max-width: 35%;
+    }
+  }
+}
