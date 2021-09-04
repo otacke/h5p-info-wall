@@ -6,12 +6,12 @@
   },
   "env": {
     "browser": true,
-    "node": true,
-    "ecmaVersion": 2020
+    "node": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 2020
   },
   "rules": {
     "valid-jsdoc": "off",
