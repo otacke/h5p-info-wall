@@ -123,8 +123,13 @@
             },
             {
               "label": "Eingeben zum Filtern",
-              "description": "Nachricht für Screen-Reader",
+              "description": "Nachricht für Screen-Reader.",
               "default": "Gibt einen Suchbegriff zum Filtern des Inhalts nach relevanten Einträgen ein."
+            },
+            {
+              "label": "Liste verändert.",
+              "description": "Nachricht für Screen-Reader @visible und @total sind Platzhalter und werden durch die jeweiligen Werte ersetzt.",
+              "default": "Liste verändert. Zeige @visible von @total Einträgen."
             }
           ]
         }

@@ -101,8 +101,17 @@ export default class InfoWallContent {
       a11yRepresentation.appendChild(panel.getListItem());
     });
 
+    this.visiblePanels = this.panels.length;
+    this.visiblePanelsBefore = this.panels.length;
+
     this.content.appendChild(panelsWrapper);
     this.content.appendChild(a11yRepresentation);
+
+    // Field for reading to screenreader
+    this.readField = document.createElement('div');
+    this.readField.setAttribute('aria-live', 'polite');
+    this.readField.classList.add('h5p-info-wall-hidden-read');
+    this.content.appendChild(this.readField);
 
     this.handlePanelsFiltered();
   }
@@ -113,6 +122,45 @@ export default class InfoWallContent {
    */
   getDOM() {
     return this.content;
+  }
+
+  /**
+   * Read text to screenreader.
+   * @param {string} text Text to read (politely).
+   */
+  read(text) {
+    if (this.readText) {
+      const fullstop = this.readText.substr(-1, 1) === '.' ? '' : '.';
+      this.readText = `${this.readText}${fullstop} ${text}`;
+    }
+    else {
+      this.readText = text;
+    }
+
+    this.readField.innerHTML = this.readText;
+
+    setTimeout(() => {
+      // Stop combining when done reading
+      this.readText = null;
+      this.readField.innerHTML = '';
+    }, 100);
+  }
+
+  /**
+   * Announce change of number of visible panels.
+   */
+  announceChange() {
+    if (this.visiblePanelsBefore !== this.visiblePanels) {
+      clearTimeout(this.readTimeout);
+      this.readTimeout = setTimeout(() => {
+        this.read(
+          Dictionary.get('listChanged')
+            .replace('@visible', this.visiblePanels)
+            .replace('@total', this.panels.length)
+        );
+      }, 500);
+    }
+    this.visiblePanelsBefore = this.visiblePanels;
   }
 
   /**
@@ -136,11 +184,11 @@ export default class InfoWallContent {
    * @param {string} query Query text.
    */
   handleSearchChange(query) {
-    let visible = 0;
+    this.visiblePanels = 0;
 
     // Query box emptied
     if (query === '') {
-      visible = this.panels.length;
+      this.visiblePanels = this.panels.length;
       this.message.classList.add('h5p-info-wall-display-none');
 
       this.panels.forEach(panel => {
@@ -148,6 +196,7 @@ export default class InfoWallContent {
       });
 
       this.handlePanelsFiltered();
+      this.announceChange();
 
       return;
     }
@@ -155,7 +204,7 @@ export default class InfoWallContent {
     // Hide panels if they don't contain the query
     this.panels.forEach(panel => {
       if (panel.contains(query)) {
-        visible++;
+        this.visiblePanels++;
         panel.show();
       }
       else {
@@ -164,7 +213,7 @@ export default class InfoWallContent {
     });
 
     // Display no matches message
-    if (visible === 0) {
+    if (this.visiblePanels === 0) {
       this.message.classList.remove('h5p-info-wall-display-none');
       this.message.innerHTML = Dictionary
         .get('noMatchesForFilter')
@@ -174,5 +223,7 @@ export default class InfoWallContent {
       this.message.classList.add('h5p-info-wall-display-none');
       this.handlePanelsFiltered();
     }
+
+    this.announceChange();
   }
 }

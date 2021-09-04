@@ -29,13 +29,12 @@ export default class InfoWall extends H5P.EventDispatcher {
       l10n: {
         'noEntriesError': 'The author did not enter anything.',
         'noMatchesForFilter': 'There are not matches for @query.',
-        'enterToFilter': 'Enter a query to filter the content for relevant entries.'
+        'enterToFilter': 'Enter a query to filter the content for relevant entries.',
+        'listChanged': 'List changed. Showing @visible of @total items.',
+        'image': this.params.panels.length &&
+          this.params.panels[0]?.image?.params?.contentName || 'Image'
       }
     }, params.infoWall);
-
-    // Set "Image" translation from H5P.Image
-    this.params.l10n.image = this.params.panels.length &&
-      this.params.panels[0]?.image?.params?.contentName || 'Image';
 
     this.contentId = contentId;
 

@@ -123,8 +123,13 @@
             },
             {
               "label": "Enter to filter",
-              "description": "Message for screen readers",
+              "description": "Message for screen readers.",
               "default": "Enter a query to filter the content for relevant entries."
+            },
+            {
+              "label": "List changed.",
+              "description": "Message for screen readers. @visible and @total are placeholders and will be preplaced with the respective values.",
+              "default": "List changed. Showing @visible of @total items."
             }
           ]
         }
