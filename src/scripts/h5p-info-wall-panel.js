@@ -129,16 +129,38 @@ export default class InfoWallPanel {
   }
 
   /**
-   * Check whether searchable panel content contains query.
+   * Check whether searchable panel content contains some query word.
    * @param {string} Query.
-   * @return {boolean} True, if searchable panel content contains query.
+   * @return {boolean} True, if searchable panel content contains query word.
    */
   contains(query) {
+    query = query.toLowerCase();
+
     return this.params.entries
       .filter(entry => entry.searchable)
       .some(entry => {
         const plainText = Util.htmlDecode(entry.text).toLowerCase();
-        return plainText.indexOf(query.toLowerCase()) !== -1;
+
+        const words = query.split(' ').filter(word => word.trim() !== '');
+
+        // Check for exatc matches
+        const exactMatch = words.some(word => {
+          return (plainText.indexOf(word) !== -1);
+        });
+
+        if (exactMatch) {
+          return true;
+        }
+
+        // Check for fuzzy matches
+        const fuzzyMatch = words.some(word => {
+          return H5P.TextUtilities.fuzzyFind(
+            word,
+            plainText
+          ).contains;
+        });
+
+        return fuzzyMatch;
       });
   }
 
