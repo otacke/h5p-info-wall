@@ -31,7 +31,7 @@ export default class InfoWall extends H5P.EventDispatcher {
         'noMatchesForFilter': 'There are not matches for @query.',
         'enterToFilter': 'Enter a query to filter the content for relevant entries.',
         'listChanged': 'List changed. Showing @visible of @total items.',
-        'image': this.params.panels.length &&
+        'image': this.params?.panels?.length &&
           this.params.panels[0]?.image?.params?.contentName || 'Image'
       }
     }, params.infoWall);
