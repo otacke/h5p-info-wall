@@ -33,6 +33,10 @@ export default class InfoWall extends H5P.EventDispatcher {
       }
     }, params.infoWall);
 
+    // Set "Image" translation from H5P.Image
+    this.params.l10n.image = this.params.panels.length &&
+      this.params.panels[0]?.image?.params?.contentName || 'Image';
+
     this.contentId = contentId;
 
     // Fill dictionary

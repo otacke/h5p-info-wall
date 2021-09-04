@@ -30,4 +30,34 @@ export default class Util {
     const dparser = new DOMParser().parseFromString(input, 'text/html');
     return dparser.documentElement.textContent;
   }
+
+  /**
+   * Retrieve string without HTML tags.
+   * @param {string} input Input string.
+   * @param {string[]} deleteTags Tags to delete. Rest will be kept.
+   * @return {string} Output string.
+   */
+  static stripHTML(html, deleteTags = []) {
+    const div = document.createElement('div');
+    div.innerHTML = html;
+
+    if (!Array.isArray(deleteTags)) {
+      deleteTags = (typeof deleteTags === 'string') ? [deleteTags] : [];
+    }
+
+    if (!deleteTags.length) {
+      return div.textContent || div.innerText || '';
+    }
+
+    // Delete specified tags only
+    deleteTags.forEach(tag => {
+      const elements = div.getElementsByTagName(tag);
+      let i = elements.length;
+      while (i--) {
+        elements[i].parentNode.removeChild(elements[i]);
+      }
+    });
+
+    return div.innerHTML;
+  }
 }

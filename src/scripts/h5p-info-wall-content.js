@@ -61,6 +61,12 @@ export default class InfoWallContent {
       this.params.imageSize :
       { width: 0, height: 0 };
 
+    const panelsWrapper = document.createElement('div');
+    panelsWrapper.classList.add('h5p-info-wall-panels-wrapper');
+
+    const a11yRepresentation = document.createElement('ul');
+    a11yRepresentation.classList.add('h5p-info-wall-a11y-representation');
+
     // Append panels
     this.panels = [];
     this.params.panels.forEach(panelParams => {
@@ -91,8 +97,12 @@ export default class InfoWallContent {
         contentId: this.params.contentId
       });
       this.panels.push(panel);
-      this.content.appendChild(panel.getDOM());
+      panelsWrapper.appendChild(panel.getDOM());
+      a11yRepresentation.appendChild(panel.getListItem());
     });
+
+    this.content.appendChild(panelsWrapper);
+    this.content.appendChild(a11yRepresentation);
 
     this.handlePanelsFiltered();
   }
