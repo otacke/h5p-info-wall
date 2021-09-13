@@ -31,6 +31,10 @@ export default class InfoWallTitlebar {
 
     // Search box
     if (params.searchBox) {
+      const icon = document.createElement('div');
+      icon.classList.add('h5p-info-wall-searchbox-icon');
+      this.titlebar.appendChild(icon);
+
       const searchBox = document.createElement('input');
       searchBox.classList.add('h5p-info-wall-searchbox');
       searchBox.setAttribute('aria-label', Dictionary.get('enterToFilter'));
