@@ -1,0 +1,139 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Koptekst",
+          "description": "Optionele koptekst voor de informatiemuur."
+        },
+        {
+          "label": "Eigenschappen",
+          "fields": [
+            {
+              "label": "Eigenschappen",
+              "description": "Eigenschappen voor de vermeldingen",
+              "entity": "eigenschap",
+              "widgets": [
+                {
+                  "label": "Standaard"
+                }
+              ],
+              "field": {
+                "label": "Onderdelen eigenschappen",
+                "fields": [
+                  {
+                    "label": "Label",
+                    "default": "Naamloos"
+                  },
+                  {
+                    "label": "Toon label eigenschap"
+                  },
+                  {
+                    "label": "Activeer zoeken in de eigenschap"
+                  },
+                  {
+                    "label": "Vormgeving overschrijven",
+                    "fields": [
+                      {
+                        "label": "Vet"
+                      },
+                      {
+                        "label": "Italic"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "label": "Panelen",
+          "description": "Panelen van de informatiemuur",
+          "entity": "paneel",
+          "widgets": [
+            {
+              "label": "Standaard"
+            }
+          ],
+          "field": {
+            "label": "Invoeren onderdelen",
+            "fields": [
+              {
+                "label": "Titel van het paneel"
+              },
+              {
+                "label": "Afbeelding"
+              },
+              {
+                "label": "Vermeldingen",
+                "description": "Vermeldingen van de eigenschappen",
+                "entity": "waarde",
+                "widgets": [
+                  {
+                    "label": "Standaard"
+                  }
+                ],
+                "field": {
+                  "label": "Label wordt automatisch gewijzigd"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "label": "Gedragsinstellingen",
+          "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
+          "fields": [
+            {
+              "label": "Gebruik deze uitwijkmogelijkheid voor ontbrekende afbeeldingen"
+            },
+            {
+              "label": "Afbeelding"
+            },
+            {
+              "label": "Afbeeldingsbreedte",
+              "description": "Afbeeldingsbreedte in pixels."
+            },
+            {
+              "label": "Afbeeldingshoogte",
+              "description": "Afbeeldingshoogte in pixels."
+            },
+            {
+              "label": "Alternatieve paneelachtergrond",
+              "description": "Indien aangevinkt, zal elk 2e paneel een iets donkerder achtergrond hebben dan de voorgaande."
+            },
+            {
+              "label": "Aanbieding filterveld",
+              "description": "Indien aangevinkt, kunnen de gebruikers de informatiemuur filteren."
+            }
+          ]
+        },
+        {
+          "label": "Gebruikersinterface",
+          "fields": [
+            {
+              "label": "Geen inhoud ingevoerd",
+              "default": "De auteur heeft niets ingevoerd."
+            },
+            {
+              "label": "Geen overeenkomsten gevonden",
+              "description": "@query is een plaatshouder en zal worden vervangen door de respectievelijke query die werd ingevoerd.",
+              "default": "Er zijn geen overeenkomsten voor @query."
+            },
+            {
+              "label": "Enter om te filteren",
+              "description": "Bericht voor schermlezers.",
+              "default": "Voer een query in om de inhoud te filteren op relevante onderdelen."
+            },
+            {
+              "label": "Lijst gewijzigd.",
+              "description": "Bericht voor schermlezers. @visible en @total zijn plaatshouders en worden vooraf vervangen door de respectievelijke waarden.",
+              "default": "Lijst gewijzigd. Toon @visible van @total onderdelen."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
