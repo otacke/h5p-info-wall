@@ -19,17 +19,17 @@
                 }
               ],
               "field": {
-                "label": "Onderdelen eigenschappen",
+                "label": "Onderdeel-eigenschappen",
                 "fields": [
                   {
                     "label": "Label",
                     "default": "Naamloos"
                   },
                   {
-                    "label": "Toon label eigenschap"
+                    "label": "Toon label-eigenschap"
                   },
                   {
-                    "label": "Activeer zoeken in de eigenschap"
+                    "label": "Schakel zoeken in de eigenschap in"
                   },
                   {
                     "label": "Vormgeving overschrijven",
@@ -38,7 +38,7 @@
                         "label": "Vet"
                       },
                       {
-                        "label": "Italic"
+                        "label": "Cursief"
                       }
                     ]
                   }
@@ -49,7 +49,7 @@
         },
         {
           "label": "Panelen",
-          "description": "Panelen van de informatiemuur",
+          "description": "Panelen voor de informatiemuur",
           "entity": "paneel",
           "widgets": [
             {
@@ -60,7 +60,7 @@
             "label": "Invoeren onderdelen",
             "fields": [
               {
-                "label": "Titel van het paneel"
+                "label": "Titel van paneel"
               },
               {
                 "label": "Afbeelding"
@@ -83,7 +83,7 @@
         },
         {
           "label": "Gedragsinstellingen",
-          "description": "Met deze opties kun je bepalen hoe de taak zich gedraagt.",
+          "description": "Met deze opties kun je bepalen hoe de opgave zich gedraagt.",
           "fields": [
             {
               "label": "Gebruik deze uitwijkmogelijkheid voor ontbrekende afbeeldingen"
@@ -93,18 +93,18 @@
             },
             {
               "label": "Afbeeldingsbreedte",
-              "description": "Afbeeldingsbreedte in pixels."
+              "description": "Afbeeldingsbreedte in px."
             },
             {
               "label": "Afbeeldingshoogte",
-              "description": "Afbeeldingshoogte in pixels."
+              "description": "Afbeeldingshoogte in px."
             },
             {
               "label": "Alternatieve paneelachtergrond",
-              "description": "Indien aangevinkt, zal elk 2e paneel een iets donkerder achtergrond hebben dan de voorgaande."
+              "description": "Indien aangevinkt, zal elk 2e paneel een iets donkerder achtergrond hebben dan de andere."
             },
             {
-              "label": "Aanbieding filterveld",
+              "label": "Invoerveld voor filteren",
               "description": "Indien aangevinkt, kunnen de gebruikers de informatiemuur filteren."
             }
           ]
@@ -118,17 +118,17 @@
             },
             {
               "label": "Geen overeenkomsten gevonden",
-              "description": "@query is een plaatshouder en zal worden vervangen door de respectievelijke query die werd ingevoerd.",
+              "description": "@query is een tijdelijke tekst en wordt vervangen door de respectievelijke zoekterm die werd ingevoerd.",
               "default": "Er zijn geen overeenkomsten voor @query."
             },
             {
-              "label": "Enter om te filteren",
+              "label": "Invoeren om te filteren",
               "description": "Bericht voor schermlezers.",
-              "default": "Voer een query in om de inhoud te filteren op relevante onderdelen."
+              "default": "Voer een zoekterm in om de inhoud te filteren op relevante vermeldingen."
             },
             {
               "label": "Lijst gewijzigd.",
-              "description": "Bericht voor schermlezers. @visible en @total zijn plaatshouders en worden vooraf vervangen door de respectievelijke waarden.",
+              "description": "Bericht voor schermlezers. @visible en @total zijn tijdelijke teksten en worden vervangen door de respectievelijke waarden.",
               "default": "Lijst gewijzigd. Toon @visible van @total onderdelen."
             }
           ]
