@@ -1,0 +1,139 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "description": "Neobligāta galvene informācijas sienai.",
+          "label": "Galvene"
+        },
+        {
+          "fields": [
+            {
+              "description": "Ierakstu rekvizīti",
+              "label": "Rekvizīti",
+              "entity": "rekvizīts",
+              "field": {
+                "label": "Rekvizītu vienumi",
+                "fields": [
+                  {
+                    "label": "Etiķete",
+                    "default": "Bez nosaukuma"
+                  },
+                  {
+                    "label": "Rādīt rekvizīta etiķeti"
+                  },
+                  {
+                    "label": "Iespējot meklēšanu rekvizītā"
+                  },
+                  {
+                    "label": "Stila ignorēšana",
+                    "fields": [
+                      {
+                        "label": "Treknraksts"
+                      },
+                      {
+                        "label": "Kursīvs"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "widgets": [
+                {
+                  "label": "Pēc noklusējuma"
+                }
+              ]
+            }
+          ],
+          "label": "Rekvizīti"
+        },
+        {
+          "field": {
+            "fields": [
+              {
+                "label": "Paneļa nosaukums"
+              },
+              {
+                "label": "Attēls"
+              },
+              {
+                "entity": "vērtība",
+                "label": "Ieraksti",
+                "field": {
+                  "label": "Etiķete tiks mainīta automātiski"
+                },
+                "description": "Rekvizītu ieraksti",
+                "widgets": [
+                  {
+                    "label": "Pēc noklusējuma"
+                  }
+                ]
+              }
+            ],
+            "label": "Ieejas vienumi"
+          },
+          "label": "Paneļi",
+          "description": "Paneļi sienai",
+          "entity": "panelis",
+          "widgets": [
+            {
+              "label": "Pēc noklusējuma"
+            }
+          ]
+        },
+        {
+          "label": "Uzvedības iestatījumi",
+          "fields": [
+            {
+              "label": "Trūkstošajiem attēliem izmantojiet noklusējumu"
+            },
+            {
+              "label": "Attēls"
+            },
+            {
+              "label": "Attēla platums",
+              "description": "Attēla platums pikseļos."
+            },
+            {
+              "label": "Attēla augstums",
+              "description": "Attēla augstums pikseļos."
+            },
+            {
+              "label": "Alternatīvs paneļa fons",
+              "description": "Ja atzīmēta, katram 2. panelim fons būs nedaudz tumšāks nekā pārējiem."
+            },
+            {
+              "label": "Piedāvājuma filtra lauks",
+              "description": "Ja atzīmēta, lietotāji varēs filtrēt informācijas sienu."
+            }
+          ],
+          "description": "Šie iestatījumi ļaus jums kontrolēt uzdevuma uzvedību."
+        },
+        {
+          "label": "Lietotāja saskarne",
+          "fields": [
+            {
+              "label": "Nav ievadīts saturs",
+              "default": "Autors neko neievadīja."
+            },
+            {
+              "label": "Sakritības nav atrastas",
+              "default": "Vaicājumam @query nav atbilstības.",
+              "description": "@query ir vietturis, un tas tiks aizstāts ar attiecīgo ievadīto vaicājumu."
+            },
+            {
+              "label": "Ievadiet, lai filtrētu",
+              "description": "Ziņojums ekrāna lasītājiem.",
+              "default": "Ievadiet vaicājumu, lai atlasītu saturu ar atbilstošiem ierakstiem."
+            },
+            {
+              "label": "Saraksts mainīts.",
+              "default": "Saraksts mainīts. Rāda @visible no @total vienumiem.",
+              "description": "Ziņojums ekrāna lasītājiem. @visible un @total ir vietturi, un tie tiks aizstāti ar attiecīgajām vērtībām."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
