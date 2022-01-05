@@ -34,11 +34,10 @@
 
         .h5p-info-wall-panel-entry-label {
           max-width: 15em;
+          min-width: 5em;
           overflow: hidden;
-          padding-right: 0.25em;
-          text-overflow: ellipsis;
+          padding-right: 0.75em;
           vertical-align: top;
-          white-space: nowrap;
 
           &::after {
             content: ':'
