@@ -75,6 +75,7 @@ export default class InfoWallPanel {
       // Blurred background image filling background
       this.backgroundImage = document.createElement('img');
       this.backgroundImage.classList.add('h5p-info-wall-panel-image-background');
+      this.backgroundImage.setAttribute('aria-hidden', 'true');
       this.backgroundImage.src = H5P.getPath(params.image.params.file.path, params.contentId);
       this.backgroundImage.style.width = `${params.imageSize.width}px`;
       this.backgroundImage.style.height = `${params.imageSize.height}px`;
