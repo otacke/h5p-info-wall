@@ -50,6 +50,13 @@ export default class InfoWallPanel {
         entryText.style.gridColumnStart = 1;
         entryText.style.gridColumnEnd = 'span 2';
       }
+      // Styling
+      if (entry.styling.bold) {
+        entryText.classList.add('bold');
+      }
+      if (entry.styling.italic) {
+        entryText.classList.add('italic');
+      }
       entryText.classList.add('h5p-info-wall-panel-entry-text');
       entryText.innerHTML = entry.text;
       entries.appendChild(entryText);

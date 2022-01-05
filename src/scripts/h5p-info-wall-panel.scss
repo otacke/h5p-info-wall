@@ -39,6 +39,14 @@
         vertical-align: top;
         width: 100%;
 
+        &.bold {
+          font-weight: bold;
+        }
+
+        &.italic {
+          font-style: italic;
+        }
+
         p:first-child {
           margin-top: 0;
         }
