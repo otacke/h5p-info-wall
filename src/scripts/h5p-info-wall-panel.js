@@ -49,7 +49,7 @@ export default class InfoWallPanel {
       if (entry.label) {
         const entryLabel = document.createElement('td');
         entryLabel.classList.add('h5p-info-wall-panel-entry-label');
-        entryLabel.innerText = entry.label;
+        entryLabel.innerHTML = entry.label;
         entryWrapper.appendChild(entryLabel);
 
         a11yEntrySegment.push(`${Util.stripHTML(entry.label.replace(/\n/g, ''))}:`);

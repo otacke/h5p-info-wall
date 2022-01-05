@@ -24,7 +24,7 @@ export default class InfoWallTitlebar {
     header.classList.add('h5p-info-wall-header');
     if (params.headerText) {
       const h1 = document.createElement('h1');
-      h1.innerText = params.headerText;
+      h1.innerHTML = params.headerText;
       header.appendChild(h1);
     }
     this.titlebar.appendChild(header);
