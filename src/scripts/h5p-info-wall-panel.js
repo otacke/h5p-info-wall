@@ -16,14 +16,12 @@ export default class InfoWallPanel {
     // Panel
     this.panel = document.createElement('div');
     this.panel.classList.add('h5p-info-wall-panel');
-    this.panel.setAttribute('aria-hidden', true);
 
     const entriesWrapper = document.createElement('div');
     entriesWrapper.classList.add('h5p-info-wall-panel-entries-wrapper');
-    this.panel.appendChild(entriesWrapper);
 
     // Entries
-    const entries = document.createElement('table');
+    const entries = document.createElement('div');
     entries.classList.add('h5p-info-wall-panel-entries');
     entriesWrapper.appendChild(entries);
 
@@ -34,37 +32,33 @@ export default class InfoWallPanel {
         return; // No entry
       }
 
-      const entryWrapper = document.createElement('tr');
-      entryWrapper.classList.add('h5p-info-wall-panel-entry');
-
-      // Styling
-      if (entry.styling.bold) {
-        entryWrapper.classList.add('bold');
-      }
-      if (entry.styling.italic) {
-        entryWrapper.classList.add('italic');
-      }
-
       // Label
       if (entry.label) {
-        const entryLabel = document.createElement('td');
+        const entryLabel = document.createElement('div');
         entryLabel.classList.add('h5p-info-wall-panel-entry-label');
+        // Styling
+        if (entry.styling.bold) {
+          entryLabel.classList.add('bold');
+        }
+        if (entry.styling.italic) {
+          entryLabel.classList.add('italic');
+        }
         entryLabel.innerHTML = entry.label;
-        entryWrapper.appendChild(entryLabel);
-
         a11yEntrySegment.push(`${Util.stripHTML(entry.label.replace(/\n/g, ''))}:`);
+        entries.appendChild(entryLabel);
       }
 
       // Text
-      const entryText = document.createElement('td');
+      const entryText = document.createElement('div');
       if (!entry.label) {
-        entryText.setAttribute('colspan', 2);
+        entryText.style.gridColumnStart = 1;
+        entryText.style.gridColumnEnd = 'span 2';
       }
       entryText.classList.add('h5p-info-wall-panel-entry-text');
       entryText.innerHTML = entry.text;
-      entryWrapper.appendChild(entryText);
+      entries.appendChild(entryText);
 
-      entries.appendChild(entryWrapper);
+      this.panel.appendChild(entriesWrapper);
 
       a11yEntrySegment.push(`${Util.stripHTML(entry.text.replace(/\n/g, ''))}.`);
     });

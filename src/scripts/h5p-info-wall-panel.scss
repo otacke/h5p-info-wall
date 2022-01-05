@@ -12,17 +12,15 @@
   }
 
   .h5p-info-wall-panel-entries-wrapper {
-    flex: 1 1 auto;
     width: 100%;
 
     .h5p-info-wall-panel-entries {
-      border-spacing: 0 .5em;
-      margin: -0.5em 0;
+      display: grid;
+      grid-gap: .5em;
+      grid-template-columns: fit-content(15em) 1fr;
 
-      .h5p-info-wall-panel-entry {
-        &:not(:last-child) {
-          margin-bottom: 0.5em;
-        }
+      .h5p-info-wall-panel-entry-label {
+        vertical-align: top;
 
         &.bold {
           font-weight: bold;
@@ -32,30 +30,22 @@
           font-style: italic;
         }
 
-        .h5p-info-wall-panel-entry-label {
-          max-width: 15em;
-          min-width: 5em;
-          overflow: hidden;
-          padding-right: 0.75em;
-          vertical-align: top;
+        &:not(.h5p-info-wall-panel-entry-label-empty)::after {
+          content: ':'
+        }
+      }
 
-          &::after {
-            content: ':'
-          }
+      .h5p-info-wall-panel-entry-text {
+        vertical-align: top;
+        width: 100%;
+
+        p:first-child {
+          margin-top: 0;
         }
 
-        .h5p-info-wall-panel-entry-text {
-          vertical-align: top;
-          width: 100%;
-
-          p:first-child {
-            margin-top: 0;
-          }
-
-          p {
-            margin-bottom: 0;
-            margin-top: .5em;
-          }
+        p {
+          margin-bottom: 0;
+          margin-top: .5em;
         }
       }
     }
