@@ -82,12 +82,6 @@
   }
 }
 
-.h5p-info-wall-panel-a11y-list-item {
-  &.h5p-info-wall-display-none {
-    display: none;
-  }
-}
-
 @media (max-width: $mobile-breakpoint) {
   .h5p-info-wall-panel {
     align-items: center;

@@ -1,6 +1,5 @@
 import "./h5p-info-wall-panel.scss";
 
-import Dictionary from './h5p-info-wall-dictionary';
 import Util from './h5p-info-wall-util';
 
 export default class InfoWallPanel {
@@ -25,8 +24,6 @@ export default class InfoWallPanel {
     entries.classList.add('h5p-info-wall-panel-entries');
     entriesWrapper.appendChild(entries);
 
-    let a11yEntrySegment = [];
-
     params.entries.forEach(entry => {
       if (Util.htmlDecode(entry.text).trim() === '') {
         return; // No entry
@@ -44,7 +41,6 @@ export default class InfoWallPanel {
           entryLabel.classList.add('italic');
         }
         entryLabel.innerHTML = entry.label;
-        a11yEntrySegment.push(`${Util.stripHTML(entry.label.replace(/\n/g, ''))}:`);
         entries.appendChild(entryLabel);
       }
 
@@ -59,8 +55,6 @@ export default class InfoWallPanel {
       entries.appendChild(entryText);
 
       this.panel.appendChild(entriesWrapper);
-
-      a11yEntrySegment.push(`${Util.stripHTML(entry.text.replace(/\n/g, ''))}.`);
     });
 
     // Image wrapper, always set to keep uniform layout
@@ -94,17 +88,12 @@ export default class InfoWallPanel {
       image.src = H5P.getPath(params.image.params.file.path, params.contentId);
       if (params.image.params.alt) {
         image.alt = params.image.params.alt;
-        a11yEntrySegment.push(`${Dictionary.get('image')}: ${image.alt}.`);
       }
       if (params.image.params.title) {
         image.title = params.image.params.title;
       }
       this.imageWrapperInner.appendChild(image);
     }
-
-    this.a11yListItem = document.createElement('li');
-    this.a11yListItem.classList.add('h5p-info-wall-panel-a11y-list-item');
-    this.a11yListItem.innerText = a11yEntrySegment.join(' ');
   }
 
   /**
@@ -113,14 +102,6 @@ export default class InfoWallPanel {
    */
   getDOM() {
     return this.panel;
-  }
-
-  /**
-   * Get a11y List Item.
-   * @return {HTMLElement} List item for a11y representation.
-   */
-  getListItem() {
-    return this.a11yListItem;
   }
 
   /**
@@ -164,7 +145,6 @@ export default class InfoWallPanel {
    */
   show() {
     this.panel.classList.remove('h5p-info-wall-display-none');
-    this.a11yListItem.classList.remove('h5p-info-wall-display-none');
     this.visible = true;
   }
 
@@ -174,7 +154,6 @@ export default class InfoWallPanel {
   hide() {
     this.visible = false;
     this.panel.classList.add('h5p-info-wall-display-none');
-    this.a11yListItem.classList.add('h5p-info-wall-display-none');
   }
 
   /**

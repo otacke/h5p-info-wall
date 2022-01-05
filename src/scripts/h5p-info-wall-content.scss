@@ -15,18 +15,12 @@
     }
   }
 
-  .h5p-info-wall-a11y-representation {
-    height: 0;
-    margin: 0;
-    padding: 0;
-  }
-
   .h5p-info-wall-hidden-read {
     width: 1px;
     height: 1px;
     top: -1px;
     position: absolute;
     text-indent: 1px;
-    overflow: hidden;    
+    overflow: hidden;
   }
 }

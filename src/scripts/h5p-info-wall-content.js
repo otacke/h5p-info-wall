@@ -64,9 +64,6 @@ export default class InfoWallContent {
     const panelsWrapper = document.createElement('div');
     panelsWrapper.classList.add('h5p-info-wall-panels-wrapper');
 
-    const a11yRepresentation = document.createElement('ul');
-    a11yRepresentation.classList.add('h5p-info-wall-a11y-representation');
-
     // Append panels
     this.panels = [];
     this.params.panels.forEach(panelParams => {
@@ -98,14 +95,12 @@ export default class InfoWallContent {
       });
       this.panels.push(panel);
       panelsWrapper.appendChild(panel.getDOM());
-      a11yRepresentation.appendChild(panel.getListItem());
     });
 
     this.visiblePanels = this.panels.length;
     this.visiblePanelsBefore = this.panels.length;
 
     this.content.appendChild(panelsWrapper);
-    this.content.appendChild(a11yRepresentation);
 
     // Field for reading to screenreader
     this.readField = document.createElement('div');
