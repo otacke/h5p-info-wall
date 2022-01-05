@@ -16,6 +16,7 @@ export default class InfoWallPanel {
     // Panel
     this.panel = document.createElement('div');
     this.panel.classList.add('h5p-info-wall-panel');
+    this.panel.setAttribute('aria-hidden', true);
 
     const entriesWrapper = document.createElement('div');
     entriesWrapper.classList.add('h5p-info-wall-panel-entries-wrapper');
