@@ -1,3 +1,5 @@
+@import '../styles/h5p-info-wall-main';
+
 .h5p-info-wall-panel {
   display: flex;
   flex-direction: row;
@@ -96,7 +98,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $mobile-breakpoint) {
   .h5p-info-wall-panel {
     align-items: center;
     flex-direction: column-reverse;

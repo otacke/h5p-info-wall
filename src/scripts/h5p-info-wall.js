@@ -1,4 +1,3 @@
-import "./h5p-info-wall.scss";
 import Dictionary from './h5p-info-wall-dictionary';
 import InfoWallContent from './h5p-info-wall-content';
 import Util from './h5p-info-wall-util';
