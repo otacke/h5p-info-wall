@@ -17,7 +17,7 @@
     .h5p-info-wall-panel-entries {
       display: grid;
       grid-gap: .5em;
-      grid-template-columns: fit-content(15em) 1fr;
+      grid-template-columns: fit-content(15em) minmax(0, 1fr);
 
       .h5p-info-wall-panel-entry-label {
         vertical-align: top;
@@ -38,6 +38,7 @@
       .h5p-info-wall-panel-entry-text {
         vertical-align: top;
         width: 100%;
+        word-wrap: break-word;
 
         &.bold {
           font-weight: bold;
