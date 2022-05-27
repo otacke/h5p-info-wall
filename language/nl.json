@@ -44,7 +44,8 @@
                   }
                 ]
               }
-            }
+            },
+            {}
           ]
         },
         {
@@ -106,6 +107,18 @@
             {
               "label": "Invoerveld voor filteren",
               "description": "Indien aangevinkt, kunnen de gebruikers de informatiemuur filteren."
+            },
+            {
+              "label": "Mode for filter field",
+              "description": "Choose whether the filter should narrow down or broaden the search with every new keyword.",
+              "options": [
+                {
+                  "label": "Narrow down"
+                },
+                {
+                  "label": "Broaden"
+                }
+              ]
             }
           ]
         },

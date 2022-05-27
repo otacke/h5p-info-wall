@@ -23,6 +23,7 @@ export default class InfoWall extends H5P.EventDispatcher {
         imageWidth: 150,
         imageHeight: 150,
         offerFilterField: true,
+        modeFilterField: 'or',
         alternateBackground: true
       },
       l10n: {
@@ -56,6 +57,7 @@ export default class InfoWall extends H5P.EventDispatcher {
       headerText: this.params.header,
       fallbackImage: fallbackImage,
       offerFilterField: this.params.behaviour.offerFilterField,
+      modeFilterField: this.params.behaviour.modeFilterField,
       panels: this.params.panels,
       properties: this.params.propertiesGroup.properties,
       contentId: this.contentId,

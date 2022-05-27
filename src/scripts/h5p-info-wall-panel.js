@@ -119,32 +119,51 @@ export default class InfoWallPanel {
   contains(query) {
     query = query.toLowerCase();
 
-    return this.params.entries
+    const plainText = this.params.entries
       .filter(entry => entry.searchable)
-      .some(entry => {
-        const plainText = Util.htmlDecode(entry.text).toLowerCase();
+      .reduce((plainText, entry) => {
+        return `${plainText}${Util.htmlDecode(entry.text).toLowerCase()}`;
+      }, '');
 
-        const words = query.split(' ').filter(word => word.trim() !== '');
+    const words = query.split(' ').filter(word => word.trim() !== '');
 
-        // Check for exatc matches
-        const exactMatch = words.some(word => {
-          return (plainText.indexOf(word) !== -1);
-        });
-
-        if (exactMatch) {
-          return true;
-        }
-
-        // Check for fuzzy matches
-        const fuzzyMatch = words.some(word => {
-          return H5P.TextUtilities.fuzzyFind(
-            word,
-            plainText
-          ).contains;
-        });
-
-        return fuzzyMatch;
+    // Check for exact matches
+    let exactMatch;
+    if (this.params.modeFilterField === 'and') {
+      exactMatch = words.every(word => {
+        return (plainText.indexOf(word) !== -1);
       });
+    }
+    else {
+      exactMatch = words.some(word => {
+        return (plainText.indexOf(word) !== -1);
+      });
+    }
+
+    if (exactMatch) {
+      return true;
+    }
+
+    // Check for fuzzy matches
+    let fuzzyMatch;
+    if (this.params.modeFilterField === 'and') {
+      fuzzyMatch = words.every(word => {
+        return H5P.TextUtilities.fuzzyFind(
+          word,
+          plainText
+        ).contains;
+      });
+    }
+    else {
+      fuzzyMatch = words.some(word => {
+        return H5P.TextUtilities.fuzzyFind(
+          word,
+          plainText
+        ).contains;
+      });
+    }
+
+    return fuzzyMatch;
   }
 
   /**

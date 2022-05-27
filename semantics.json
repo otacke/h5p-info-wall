@@ -238,6 +238,34 @@
             "description": "If checked, users will be able to filter the info wall.",
             "default": true,
             "optional": true
+          },
+          {
+            "name": "modeFilterField",
+            "label": "Mode for filter field",
+            "type": "select",
+            "importance": "low",
+            "description": "Choose whether the filter should narrow down or broaden the search with every new keyword.",
+            "options": [
+              {
+                "value": "and",
+                "label": "Narrow down"
+              },
+              {
+                "value": "or",
+                "label": "Broaden"
+              }
+            ],
+            "default": "or",
+            "optional": false,
+            "widget": "showWhen",
+            "showWhen": {
+              "rules": [
+                {
+                  "field": "offerFilterField",
+                  "equals": true
+                }
+              ]
+            }
           }
         ]
       },

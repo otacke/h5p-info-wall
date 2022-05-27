@@ -91,7 +91,8 @@ export default class InfoWallContent {
         image: image,
         imageSize: imageSize,
         entries: entries,
-        contentId: this.params.contentId
+        contentId: this.params.contentId,
+        modeFilterField: this.params.modeFilterField
       });
       this.panels.push(panel);
       panelsWrapper.appendChild(panel.getDOM());
