@@ -123,7 +123,7 @@ export default class InfoWallPanel {
       .filter(entry => entry.searchable)
       .reduce((plainText, entry) => {
         return `${plainText}${Util.htmlDecode(entry.text).toLowerCase()}`;
-      }, '');
+      }, this.params.keywords || '');
 
     const words = query.split(' ').filter(word => word.trim() !== '');
 

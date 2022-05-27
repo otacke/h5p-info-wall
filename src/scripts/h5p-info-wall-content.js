@@ -21,9 +21,13 @@ export default class InfoWallContent {
         return property.searchInProperty ? [...ids, index] : ids;
       }, []);
 
+    const hasKeywords = this.params.panels.some(panel => {
+      return panel.keywords && panel.keywords !== '';
+    });
+
     // Determine if filter field shold be set
     const offerFilterField = params.offerFilterField &&
-      searchablePropertyIds.length &&
+      (searchablePropertyIds.length || hasKeywords) &&
       this.params.properties.length &&
       this.params.panels.length;
 
@@ -91,6 +95,7 @@ export default class InfoWallContent {
         image: image,
         imageSize: imageSize,
         entries: entries,
+        keywords: panelParams.keywords,
         contentId: this.params.contentId,
         modeFilterField: this.params.modeFilterField
       });

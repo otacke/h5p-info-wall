@@ -78,6 +78,10 @@
                 "field": {
                   "label": "Label wird automatisch ersetzt"
                 }
+              },
+              {
+                "label": "Additional keywords",
+                "description": "Add additional keywords separated by a blank space that will be used for filtering but not be visible to the user."
               }
             ]
           }
