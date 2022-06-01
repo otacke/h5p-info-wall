@@ -132,7 +132,7 @@ export default class InfoWallPanel {
     if (words[searchMethod](word => plainText.indexOf(word) !== -1)) {
       return true;
     }
-    
+
     // Check for fuzzy matches
     return words[searchMethod](word => {
       return H5P.TextUtilities.fuzzyFind(
