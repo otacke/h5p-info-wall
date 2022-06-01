@@ -128,42 +128,18 @@ export default class InfoWallPanel {
     const words = query.split(' ').filter(word => word.trim() !== '');
 
     // Check for exact matches
-    let exactMatch;
-    if (this.params.modeFilterField === 'and') {
-      exactMatch = words.every(word => {
-        return (plainText.indexOf(word) !== -1);
-      });
-    }
-    else {
-      exactMatch = words.some(word => {
-        return (plainText.indexOf(word) !== -1);
-      });
-    }
-
-    if (exactMatch) {
+    const searchMethod = this.params.modeFilterField === 'and' ? 'every' : 'some';
+    if (words[searchMethod](word => plainText.indexOf(word) !== -1)) {
       return true;
     }
 
     // Check for fuzzy matches
-    let fuzzyMatch;
-    if (this.params.modeFilterField === 'and') {
-      fuzzyMatch = words.every(word => {
-        return H5P.TextUtilities.fuzzyFind(
-          word,
-          plainText
-        ).contains;
-      });
-    }
-    else {
-      fuzzyMatch = words.some(word => {
-        return H5P.TextUtilities.fuzzyFind(
-          word,
-          plainText
-        ).contains;
-      });
-    }
-
-    return fuzzyMatch;
+    return words[searchMethod](word => {
+      return H5P.TextUtilities.fuzzyFind(
+        word,
+        plainText
+      ).contains;
+    });
   }
 
   /**
