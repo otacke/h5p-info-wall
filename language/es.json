@@ -15,7 +15,7 @@
               "entity": "propiedad",
               "widgets": [
                 {
-                  "label": "Predeterminado"
+                  "label": "Por defecto"
                 }
               ],
               "field": {
@@ -23,7 +23,7 @@
                 "fields": [
                   {
                     "label": "Etiqueta",
-                    "default": "SinNombre"
+                    "default": "Sin nombre"
                   },
                   {
                     "label": "Mostrar etiqueta de propiedad"
@@ -35,33 +35,32 @@
                     "label": "Anulación de estilo",
                     "fields": [
                       {
-                        "label": "Negritas"
+                        "label": "Negrita"
                       },
                       {
-                        "label": "Cursivas"
+                        "label": "Cursiva"
                       }
                     ]
                   }
                 ]
               }
-            },
-            {}
+            }
           ]
         },
         {
-          "label": "Páneles",
-          "description": "Páneles para las paredes",
-          "entity": "pánel",
+          "label": "Paneles",
+          "description": "Paneles para la pared",
+          "entity": "panel",
           "widgets": [
             {
-              "label": "Predeterminado"
+              "label": "Por defecto"
             }
           ],
           "field": {
             "label": "Elementos de entrada",
             "fields": [
               {
-                "label": "Título para pánel"
+                "label": "Título del panel"
               },
               {
                 "label": "Imagen"
@@ -72,7 +71,7 @@
                 "entity": "valor",
                 "widgets": [
                   {
-                    "label": "Predeterminado"
+                    "label": "Por defecto"
                   }
                 ],
                 "field": {
@@ -87,29 +86,29 @@
           }
         },
         {
-          "label": "Configuraciones del comportamiento",
-          "description": "Estas opciones le permitirán controlar como se comporta el trabajo.",
+          "label": "Configuración del comportamiento",
+          "description": "Estas opciones le permitirán controlar cómo se comporta la tarea.",
           "fields": [
             {
-              "label": "Usar \"plan B\" para imágenes faltantes"
+              "label": "Usar \"plan B\" para imágenes que faltan"
             },
             {
               "label": "Imagen"
             },
             {
-              "label": "Ancho de imagen",
-              "description": "Ancho de imagen en px."
+              "label": "Anchura de la imagen",
+              "description": "Anchura de imagen en px."
             },
             {
               "label": "Altura de imagen",
               "description": "Altura de imagen en px."
             },
             {
-              "label": "Fondo alterno del pánel",
-              "description": "Si se activa, cada segundo pánel tendrá un fondo ligeramente más oscuro que los otros."
+              "label": "Fondo alterno del panel",
+              "description": "Si se activa, cada segundo panel tendrá un fondo ligeramente más oscuro que los otros."
             },
             {
-              "label": "Campo ofrecer filtro",
+              "label": "Campo de filtrado de contenido",
               "description": "Si se activa, los usuarios podrán filtrar la pared informativa."
             },
             {
@@ -127,25 +126,25 @@
           ]
         },
         {
-          "label": "Interfaz del usuario",
+          "label": "Interfaz de usuario",
           "fields": [
             {
               "label": "No se introdujo contenido",
-              "default": "El autor no ingresó nada."
+              "default": "El autor no ha aportado nada."
             },
             {
               "label": "No se encontraron coincidencias",
-              "description": "@query es un reemplazable y será remplazado por la consulta respectiva que fue ingresada.",
+              "description": "@query es una variable y será reemplazada por la respectiva consulta proporcionada.",
               "default": "No hay coincidencias para @query."
             },
             {
               "label": "Entrar para filtrar",
-              "description": "Mensajes para lectores de texto en voz alta.",
-              "default": "Escriba una consulta para filtrar el contenido para entradas relevantes."
+              "description": "Mensaje para lectores de pantalla.",
+              "default": "Escribe una consulta para filtrar el contenido en busca de entradas relevantes."
             },
             {
               "label": "Lista cambiada.",
-              "description": "Mensaje para lectores de texto en voz alta. @visible y @total son reemplazables y serán remplazados con los valores respectivos..",
+              "description": "Mensaje para lectores de pantalla. @visible y @total son variables y se les antepondrán los valores respectivos.",
               "default": "Lista cambiada. Mostrando @visible de @total elementos."
             }
           ]
