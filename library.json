@@ -3,7 +3,7 @@
   "description": "Filterable information wall for different purposes",
   "majorVersion": 0,
   "minorVersion": 4,
-  "patchVersion": 7,
+  "patchVersion": 9,
   "runnable": 1,
   "author": "Oliver Tacke",
   "license": "MIT",
