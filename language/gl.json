@@ -44,7 +44,8 @@
                   }
                 ]
               }
-            }
+            },
+            {}
           ]
         },
         {
@@ -77,6 +78,10 @@
                 "field": {
                   "label": "Etiqueta para ser cambiada automaticamente"
                 }
+              },
+              {
+                "label": "Additional keywords",
+                "description": "Add additional keywords separated by a blank space that will be used for filtering but not be visible to the user."
               }
             ]
           }
@@ -106,6 +111,18 @@
             {
               "label": "Ofrecer campo de filtrado",
               "description": "Se está marcado, os usuarios poderán filtrar o muro informativo."
+            },
+            {
+              "label": "Mode for filter field",
+              "description": "Choose whether the filter should narrow down or broaden the search with every new keyword.",
+              "options": [
+                {
+                  "label": "Narrow down"
+                },
+                {
+                  "label": "Broaden"
+                }
+              ]
             }
           ]
         },

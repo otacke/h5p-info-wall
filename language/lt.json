@@ -44,7 +44,8 @@
                   }
                 ]
               }
-            }
+            },
+            {}
           ]
         },
         {
@@ -68,6 +69,10 @@
                 "field": {
                   "label": "Label to be changed automatically"
                 }
+              },
+              {
+                "label": "Additional keywords",
+                "description": "Add additional keywords separated by a blank space that will be used for filtering but not be visible to the user."
               }
             ],
             "label": "Entry items"
@@ -106,6 +111,18 @@
             {
               "label": "Offer filter field",
               "description": "If checked, users will be able to filter the info wall."
+            },
+            {
+              "label": "Mode for filter field",
+              "description": "Choose whether the filter should narrow down or broaden the search with every new keyword.",
+              "options": [
+                {
+                  "label": "Narrow down"
+                },
+                {
+                  "label": "Broaden"
+                }
+              ]
             }
           ]
         },
