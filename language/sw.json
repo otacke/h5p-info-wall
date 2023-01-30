@@ -77,6 +77,10 @@
                 "field": {
                   "label": "Lebo ya kubadilishwa kiotomatiki"
                 }
+              },
+              {
+                "label": "Additional keywords",
+                "description": "Add additional keywords separated by a blank space that will be used for filtering but not be visible to the user."
               }
             ]
           }
@@ -106,6 +110,18 @@
             {
               "label": "Weka sehemu ya kichujio",
               "description": "Ikichaguliwa, watumiaji wataweza kuchuja ukuta wa maelezo."
+            },
+            {
+              "label": "Mode for filter field",
+              "description": "Choose whether the filter should narrow down or broaden the search with every new keyword.",
+              "options": [
+                {
+                  "label": "Narrow down"
+                },
+                {
+                  "label": "Broaden"
+                }
+              ]
             }
           ]
         },
