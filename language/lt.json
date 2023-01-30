@@ -49,7 +49,16 @@
           ]
         },
         {
+          "label": "Skydeliai",
+          "description": "Skydeliai sienoms",
+          "entity": "skydelis",
+          "widgets": [
+            {
+              "label": "Numatytasis"
+            }
+          ],
           "field": {
+            "label": "Entry items",
             "fields": [
               {
                 "label": "Title for panel"
@@ -58,14 +67,14 @@
                 "label": "Paveikslėlis"
               },
               {
+                "label": "Įrašai",
+                "description": "Entries for the properties",
+                "entity": "reikšmė",
                 "widgets": [
                   {
                     "label": "Numatytasis"
                   }
                 ],
-                "label": "Įrašai",
-                "description": "Entries for the properties",
-                "entity": "reikšmė",
                 "field": {
                   "label": "Label to be changed automatically"
                 }
@@ -74,17 +83,8 @@
                 "label": "Additional keywords",
                 "description": "Add additional keywords separated by a blank space that will be used for filtering but not be visible to the user."
               }
-            ],
-            "label": "Entry items"
-          },
-          "label": "Skydeliai",
-          "description": "Skydeliai sienoms",
-          "entity": "skydelis",
-          "widgets": [
-            {
-              "label": "Numatytasis"
-            }
-          ]
+            ]
+          }
         },
         {
           "label": "Veikimo nustatymai",
