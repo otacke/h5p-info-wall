@@ -1,0 +1,156 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Naslov vsebine",
+          "description": "Neobvezen naslov zidu."
+        },
+        {
+          "label": "Zapisi",
+          "fields": [
+            {
+              "label": "Zapisi",
+              "description": "Določitev zapisov za vnos vsebine",
+              "entity": "zapis",
+              "widgets": [
+                {
+                  "label": "Privzeto"
+                }
+              ],
+              "field": {
+                "label": "Zgradba zapisov",
+                "fields": [
+                  {
+                    "label": "Naslov",
+                    "default": "Neimenovano"
+                  },
+                  {
+                    "label": "Pokaži naslov zapisa"
+                  },
+                  {
+                    "label": "Omogoči iskanje po zapisu"
+                  },
+                  {
+                    "label": "Preglasitev sloga",
+                    "fields": [
+                      {
+                        "label": "Krepko"
+                      },
+                      {
+                        "label": "Ležeče"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {}
+          ]
+        },
+        {
+          "label": "Paneli",
+          "description": "Paneli za informacijski zid",
+          "entity": "panel",
+          "widgets": [
+            {
+              "label": "Privzeto"
+            }
+          ],
+          "field": {
+            "label": "Vnosi",
+            "fields": [
+              {
+                "label": "Naslov panela"
+              },
+              {
+                "label": "Slika"
+              },
+              {
+                "label": "Vnosi",
+                "description": "Vnosi glede na zgradbo zapisov",
+                "entity": "vrednost",
+                "widgets": [
+                  {
+                    "label": "Privzeto"
+                  }
+                ],
+                "field": {
+                  "label": "Samodejna sprememba naslova"
+                }
+              },
+              {
+                "label": "Dodatne ključne besede",
+                "description": "Dodatne ključne besede služijo za filtriranje zapisov in ostanejo udeležencem skrite. Ločite jih s presledkom."
+              }
+            ]
+          }
+        },
+        {
+          "label": "Nastavitve interakcije",
+          "description": "Nastavitve omogočajo nadzor nad interakcijo aktivnosti za udeležence.",
+          "fields": [
+            {
+              "label": "Nadomestna slika za panele brez slike"
+            },
+            {
+              "label": "Slika"
+            },
+            {
+              "label": "Širina slike",
+              "description": "Vrednost v slikovnih točkah (px)."
+            },
+            {
+              "label": "Višina slike",
+              "description": "Vrednost v slikovnih točkah (px)."
+            },
+            {
+              "label": "Izmenično ozadje panela",
+              "description": "Nastavitev poudari vsako drugo ozadje panela s temnejšim odtenkom barve."
+            },
+            {
+              "label": "Pokaži polje za filtriranje vnosov",
+              "description": "Udeležencem je omogočeno filtriranje po vsebini informacijskega zidu."
+            },
+            {
+              "label": "Način filtriranja",
+              "description": "Vsaka nova ključna beseda lahko zoži ali razširi iskalni niz.",
+              "options": [
+                {
+                  "label": "Zoži"
+                },
+                {
+                  "label": "Razširi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Uporabniški vmesnik",
+          "fields": [
+            {
+              "label": "Ni vsebine",
+              "default": "Avtor ni vnesel vsebine."
+            },
+            {
+              "label": "Ni zadetkov",
+              "description": "@query je spremenljivka.",
+              "default": "Ni zadetkov za iskalni niz @query."
+            },
+            {
+              "label": "Vnos iskalnega niza za filtriranje",
+              "description": "Sporočilo za bralnike zaslona.",
+              "default": "Vnesite iskalni niz za filtriranje vsebine."
+            },
+            {
+              "label": "Sprememba seznama",
+              "description": "Sporočilo za bralnike zaslona. @visible in @total sta spremenljivki.",
+              "default": "Seznam se je spremenil. Prikazano @visible od @total vnosov."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
