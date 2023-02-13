@@ -3,80 +3,79 @@
     {
       "fields": [
         {
-          "label": "Header",
-          "description": "Optional header for the information wall."
+          "label": "Záhlaví",
+          "description": "Volitelné záhlaví pro informační zeď."
         },
         {
-          "label": "Properties",
+          "label": "Vlastnosti",
           "fields": [
             {
-              "label": "Properties",
-              "description": "Properties for the entries",
-              "entity": "property",
+              "label": "Vlastnosti",
+              "description": "Vlastnosti pro záznamy",
+              "entity": "vlastnost",
               "widgets": [
                 {
-                  "label": "Default"
+                  "label": "Výchozí"
                 }
               ],
               "field": {
-                "label": "Property items",
+                "label": "Položky vlastnosti",
                 "fields": [
                   {
-                    "label": "Label",
-                    "default": "Unnamed"
+                    "label": "Popisek",
+                    "default": "Bezejmený"
                   },
                   {
-                    "label": "Show property label"
+                    "label": "Zobrazit popisek vlastnosti"
                   },
                   {
-                    "label": "Enable searching in the property"
+                    "label": "Povolit vyhledávání ve vlastnosti"
                   },
                   {
-                    "label": "Styling override",
+                    "label": "Přepsání stylu",
                     "fields": [
                       {
-                        "label": "Bold"
+                        "label": "Tučně"
                       },
                       {
-                        "label": "Italic"
+                        "label": "Kurzíva"
                       }
                     ]
                   }
                 ]
               }
-            },
-            {}
+            }
           ]
         },
         {
-          "label": "Panels",
-          "description": "Panels for the wall",
+          "label": "Panely",
+          "description": "Panely pro zeď",
           "entity": "panel",
           "widgets": [
             {
-              "label": "Default"
+              "label": "Výchozí"
             }
           ],
           "field": {
-            "label": "Entry items",
+            "label": "Vstupní položky",
             "fields": [
               {
-                "label": "Title for panel"
+                "label": "Název panelu"
               },
               {
-                "label": "Image"
+                "label": "Obrázek"
               },
               {
-                "label": "Entries",
-                "description": "Entries for the properties",
-                "entity": "value",
+                "label": "Záznamy",
+                "description": "Záznamy pro vlastnosti",
+                "entity": "hodnota",
                 "widgets": [
                   {
-                    "label": "Default"
+                    "label": "Výchozí"
                   }
                 ],
                 "field": {
-                  "label": "Label to be changed automatically"
+                  "label": "Popisek se automaticky změní"
                 }
               },
               {
@@ -87,30 +86,30 @@
           }
         },
         {
-          "label": "Behavioural settings",
-          "description": "These options will let you control how the task behaves.",
+          "label": "Nastavení chování",
+          "description": "Tyto možnosti vám umožní řídit, jak se úloha chová.",
           "fields": [
             {
-              "label": "Use fallback for missing images"
+              "label": "Pro chybějící obrázky použijte záložní"
             },
             {
-              "label": "Image"
+              "label": "Obrázek"
             },
             {
-              "label": "Image width",
-              "description": "Image width in px."
+              "label": "Šířka obrázku",
+              "description": "Šířka obrázku v px."
             },
             {
-              "label": "Image height",
-              "description": "Image height in px."
+              "label": "Výška obrázku",
+              "description": "Výška obrázku v px."
             },
             {
-              "label": "Alternate panel background",
-              "description": "If checked, each 2nd panel will have slightly darker background than the others."
+              "label": "Alternativní pozadí panelu",
+              "description": "Pokud je zaškrtnuto, každý 2. panel bude mít o něco tmavší pozadí než ostatní."
             },
             {
-              "label": "Offer filter field",
-              "description": "If checked, users will be able to filter the info wall."
+              "label": "Nabídka filtru pole",
+              "description": "Pokud je zaškrtnuto, uživatelé budou moci informační zeď filtrovat."
             },
             {
               "label": "Mode for filter field",
@@ -127,26 +126,26 @@
           ]
         },
         {
-          "label": "User interface",
+          "label": "Uživatelské rozhraní",
           "fields": [
             {
-              "label": "No content entered",
-              "default": "The author did not enter anything."
+              "label": "Nebyl zadán žádný obsah",
+              "default": "Autor nic nezadal."
             },
             {
-              "label": "No matches found",
-              "description": "@query is a placeholder and will be replaced by the respective query that was entered.",
-              "default": "There are not matches for @query."
+              "label": "Nebyly nalezeny žádné shody",
+              "description": "@query je zástupný symbol a bude nahrazen příslušným dotazem, který byl zadán.",
+              "default": "Pro @query nebyly nalezeny žádné shody."
             },
             {
-              "label": "Enter to filter",
-              "description": "Message for screen readers.",
-              "default": "Enter a query to filter the content for relevant entries."
+              "label": "Zadejte pro filtrování",
+              "description": "Zpráva pro čtečky obrazovky.",
+              "default": "Zadejte dotaz pro filtrování obsahu pro relevantní položky."
             },
             {
-              "label": "List changed.",
-              "description": "Message for screen readers. @visible and @total are placeholders and will be preplaced with the respective values.",
-              "default": "List changed. Showing @visible of @total items."
+              "label": "Seznam změněn.",
+              "description": "Zpráva pro čtečky obrazovky. @visible a @total jsou zástupné symboly a budou nahrazeny příslušnými hodnotami.",
+              "default": "Seznam změněn. Zobrazuje se @visible z @total položek."
             }
           ]
         }
