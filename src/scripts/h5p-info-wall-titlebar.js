@@ -23,7 +23,8 @@ export default class InfoWallTitlebar {
     const header = document.createElement('div');
     header.classList.add('h5p-info-wall-header');
     if (params.headerText) {
-      const h1 = document.createElement('h1');
+      const h1 = document.createElement('div');
+      h1.classList.add('h5p-info-wall-header-text');
       h1.innerHTML = params.headerText;
       header.appendChild(h1);
     }
