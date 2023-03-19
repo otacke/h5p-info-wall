@@ -1,0 +1,156 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "页眉",
+          "description": "信息墙的可选页眉。"
+        },
+        {
+          "label": "属性",
+          "fields": [
+            {
+              "label": "属性",
+              "description": "条目的属性",
+              "entity": "属性",
+              "widgets": [
+                {
+                  "label": "默认"
+                }
+              ],
+              "field": {
+                "label": "属性项",
+                "fields": [
+                  {
+                    "label": "标签",
+                    "default": "未命名"
+                  },
+                  {
+                    "label": "显示属性标签"
+                  },
+                  {
+                    "label": "启用属性搜索"
+                  },
+                  {
+                    "label": "样式覆盖",
+                    "fields": [
+                      {
+                        "label": "加粗"
+                      },
+                      {
+                        "label": "斜体"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {}
+          ]
+        },
+        {
+          "label": "面板",
+          "description": "信息墙的面板",
+          "entity": "面板",
+          "widgets": [
+            {
+              "label": "默认"
+            }
+          ],
+          "field": {
+            "label": "条目",
+            "fields": [
+              {
+                "label": "面板标题"
+              },
+              {
+                "label": "图片"
+              },
+              {
+                "label": "条目",
+                "description": "属性的条目",
+                "entity": "值",
+                "widgets": [
+                  {
+                    "label": "默认"
+                  }
+                ],
+                "field": {
+                  "label": "自动更改的标签"
+                }
+              },
+              {
+                "label": "附加关键词",
+                "description": "用空格分隔的附加关键词，用于过滤但对用户不可见。"
+              }
+            ]
+          }
+        },
+        {
+          "label": "行为设置",
+          "description": "这些选项将让您控制任务的行为。",
+          "fields": [
+            {
+              "label": "使用备用图像"
+            },
+            {
+              "label": "图像"
+            },
+            {
+              "label": "图像宽度",
+              "description": "图像宽度（像素）"
+            },
+            {
+              "label": "图像高度",
+              "description": "图像高度（像素）"
+            },
+            {
+              "label": "交替面板背景",
+              "description": "如果选中，则每第二个面板的背景将略暗于其他面板。"
+            },
+            {
+              "label": "提供筛选字段",
+              "description": "如果选中，则用户可以筛选信息墙。"
+            },
+            {
+              "label": "筛选字段模式",
+              "description": "选择筛选器是否应该在每个新关键字上缩小或扩大搜索范围。",
+              "options": [
+                {
+                  "label": "缩小"
+                },
+                {
+                  "label": "扩大"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "用户界面",
+          "fields": [
+            {
+              "label": "未输入内容",
+              "default": "作者未输入任何内容。"
+            },
+            {
+              "label": "未找到匹配项",
+              "description": "@query 是一个占位符，将被替换为输入的相应查询。",
+              "default": "没有找到@query的匹配项。"
+            },
+            {
+              "label": "输入以进行筛选",
+              "description": "屏幕阅读器的信息。",
+              "default": "输入查询以筛选相关条目的内容。"
+            },
+            {
+              "label": "列表已更改。",
+              "description": "屏幕阅读器的信息。@visible和@total是占位符，将被相应的值替换。",
+              "default": "列表已更改。显示@visible项中的@total项。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
