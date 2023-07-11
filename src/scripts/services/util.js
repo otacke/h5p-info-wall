@@ -2,14 +2,16 @@
 export default class Util {
   /**
    * Extend an array just like JQuery's extend.
-   * @param {object} arguments Objects to be merged.
-   * @return {object} Merged objects.
+   * @returns {object} Merged objects.
    */
   static extend() {
     for (let i = 1; i < arguments.length; i++) {
       for (let key in arguments[i]) {
         if (Object.prototype.hasOwnProperty.call(arguments[i], key)) {
-          if (typeof arguments[0][key] === 'object' && typeof arguments[i][key] === 'object') {
+          if (
+            typeof arguments[0][key] === 'object' &&
+            typeof arguments[i][key] === 'object'
+          ) {
             this.extend(arguments[0][key], arguments[i][key]);
           }
           else {
@@ -24,7 +26,7 @@ export default class Util {
   /**
    * Retrieve true string from HTML encoded string.
    * @param {string} input Input string.
-   * @return {string} Output string.
+   * @returns {string} Output string.
    */
   static htmlDecode(input) {
     const dparser = new DOMParser().parseFromString(input, 'text/html');

@@ -1,12 +1,10 @@
-import "./h5p-info-wall-content.scss";
-
-import InfoWallPanel from './h5p-info-wall-panel';
-import InfoWallTitlebar from './h5p-info-wall-titlebar';
-import Dictionary from './h5p-info-wall-dictionary';
+import InfoWallPanel from '@scripts/h5p-info-wall-panel';
+import InfoWallTitlebar from '@scripts/h5p-info-wall-titlebar';
+import './h5p-info-wall-content.scss';
 
 export default class InfoWallContent {
   /**
-   * @constructor
+   * @class
    * @param {object} params Parameters passed by the editor.
    */
   constructor(params = {}) {
@@ -21,7 +19,7 @@ export default class InfoWallContent {
         return property.searchInProperty ? [...ids, index] : ids;
       }, []);
 
-    const hasKeywords = this.params.panels.some(panel => {
+    const hasKeywords = this.params.panels.some((panel) => {
       return panel.keywords && panel.keywords !== '';
     });
 
@@ -55,13 +53,13 @@ export default class InfoWallContent {
     this.content.appendChild(this.message);
 
     if (!this.params.properties.length || !this.params.panels.length) {
-      this.message.innerText = Dictionary.get('noEntriesError');
+      this.message.innerText = this.params.dictionary.get('noEntriesError');
       this.message.classList.remove('h5p-info-wall-display-none');
       return; // No content to display
     }
 
     // Set image size to 0/0 if no images are set
-    const imageSize = (this.params.panels.some(panel => panel?.image?.params?.file?.path)) ?
+    const imageSize = (this.params.panels.some((panel) => panel?.image?.params?.file?.path)) ?
       this.params.imageSize :
       { width: 0, height: 0 };
 
@@ -70,7 +68,7 @@ export default class InfoWallContent {
 
     // Append panels
     this.panels = [];
-    this.params.panels.forEach(panelParams => {
+    this.params.panels.forEach((panelParams) => {
       const image = panelParams?.image?.params?.file?.path ?
         panelParams.image :
         this.params.fallbackImage;
@@ -119,7 +117,7 @@ export default class InfoWallContent {
 
   /**
    * Get content DOM element.
-   * @return {HTMLElement} Content DOM element.
+   * @returns {HTMLElement} Content DOM element.
    */
   getDOM() {
     return this.content;
@@ -155,7 +153,7 @@ export default class InfoWallContent {
       clearTimeout(this.readTimeout);
       this.readTimeout = setTimeout(() => {
         this.read(
-          Dictionary.get('listChanged')
+          this.params.dictionary.get('listChanged')
             .replace('@visible', this.visiblePanels)
             .replace('@total', this.panels.length)
         );
@@ -171,7 +169,7 @@ export default class InfoWallContent {
     if (this.params.alternateBackground) {
       let background = false;
 
-      this.panels.forEach(panel => {
+      this.panels.forEach((panel) => {
         if (panel.isVisible()) {
           panel.setBackground(background);
           background = !background;
@@ -192,7 +190,7 @@ export default class InfoWallContent {
       this.visiblePanels = this.panels.length;
       this.message.classList.add('h5p-info-wall-display-none');
 
-      this.panels.forEach(panel => {
+      this.panels.forEach((panel) => {
         panel.show();
       });
 
@@ -203,7 +201,7 @@ export default class InfoWallContent {
     }
 
     // Hide panels if they don't contain the query
-    this.panels.forEach(panel => {
+    this.panels.forEach((panel) => {
       if (panel.contains(query)) {
         this.visiblePanels++;
         panel.show();
@@ -216,7 +214,7 @@ export default class InfoWallContent {
     // Display no matches message
     if (this.visiblePanels === 0) {
       this.message.classList.remove('h5p-info-wall-display-none');
-      this.message.innerHTML = Dictionary
+      this.message.innerHTML = this.params.dictionary
         .get('noMatchesForFilter')
         .replace(/@query/g, `<span class="h5p-info-wall-query-text">${query}</span>`);
     }

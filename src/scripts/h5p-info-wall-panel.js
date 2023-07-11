@@ -1,10 +1,10 @@
-import "./h5p-info-wall-panel.scss";
+import './h5p-info-wall-panel.scss';
 
-import Util from './h5p-info-wall-util';
+import Util from '@services/util';
 
 export default class InfoWallPanel {
   /**
-   * @constructor
+   * @class
    * @param {object} params Parameters passed by the editor.
    */
   constructor(params = {}) {
@@ -24,7 +24,7 @@ export default class InfoWallPanel {
     entries.classList.add('h5p-info-wall-panel-entries');
     entriesWrapper.appendChild(entries);
 
-    params.entries.forEach(entry => {
+    params.entries.forEach((entry) => {
       if (Util.htmlDecode(entry.text).trim() === '') {
         return; // No entry
       }
@@ -105,7 +105,7 @@ export default class InfoWallPanel {
 
   /**
    * Get panel DOM element.
-   * @return {HTMLElement} Panel DOM element.
+   * @returns {HTMLElement} Panel DOM element.
    */
   getDOM() {
     return this.panel;
@@ -113,28 +113,31 @@ export default class InfoWallPanel {
 
   /**
    * Check whether searchable panel content contains some query word.
-   * @param {string} Query.
-   * @return {boolean} True, if searchable panel content contains query word.
+   * @param {string} query Query string.
+   * @returns {boolean} True, if searchable panel content contains query word.
    */
   contains(query) {
     query = query.toLowerCase();
 
     const plainText = this.params.entries
-      .filter(entry => entry.searchable)
+      .filter((entry) => entry.searchable)
       .reduce((plainText, entry) => {
         return `${plainText}${Util.htmlDecode(entry.text).toLowerCase()}`;
       }, this.params.keywords || '');
 
-    const words = query.split(' ').filter(word => word.trim() !== '');
+    const words = query.split(' ').filter((word) => word.trim() !== '');
 
     // Check for exact matches
-    const searchMethod = this.params.modeFilterField === 'and' ? 'every' : 'some';
-    if (words[searchMethod](word => plainText.indexOf(word) !== -1)) {
+    const searchMethod = this.params.modeFilterField === 'and' ?
+      'every' :
+      'some';
+
+    if (words[searchMethod]((word) => plainText.indexOf(word) !== -1)) {
       return true;
     }
 
     // Check for fuzzy matches
-    return words[searchMethod](word => {
+    return words[searchMethod]((word) => {
       return H5P.TextUtilities.fuzzyFind(
         word,
         plainText
@@ -177,7 +180,7 @@ export default class InfoWallPanel {
 
   /**
    * Determine whether the panel is visible.
-   * @return {boolean} True, if panel is visible. Else false.
+   * @returns {boolean} True, if panel is visible. Else false.
    */
   isVisible() {
     return this.visible;

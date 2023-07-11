@@ -1,10 +1,8 @@
-import "./h5p-info-wall-titlebar.scss";
-
-import Dictionary from './h5p-info-wall-dictionary';
+import './h5p-info-wall-titlebar.scss';
 
 export default class InfoWallTitlebar {
   /**
-   * @constructor
+   * @class
    * @param {object} params Parameters passed by the editor.
    * @param {object} callbacks Callbacks.
    * @param {function} callbacks.onSearchChange Search changed callback.
@@ -38,7 +36,9 @@ export default class InfoWallTitlebar {
 
       const searchBox = document.createElement('input');
       searchBox.classList.add('h5p-info-wall-searchbox');
-      searchBox.setAttribute('aria-label', Dictionary.get('enterToFilter'));
+      searchBox.setAttribute(
+        'aria-label', this.params.dictionary.get('enterToFilter')
+      );
       searchBox.addEventListener('keyup', () => {
         this.callbacks.onSearchChange(searchBox.value);
       });
@@ -48,7 +48,7 @@ export default class InfoWallTitlebar {
 
   /**
    * Get titlebar DOM element.
-   * @return {HTMLElement} Titlebar DOM element.
+   * @returns {HTMLElement} Titlebar DOM element.
    */
   getDOM() {
     return this.titlebar;

@@ -1,4 +1,4 @@
-@import '../styles/h5p-info-wall-main';
+@import '@styles/h5p-info-wall-main';
 
 .h5p-info-wall-panel {
   display: flex;
@@ -49,13 +49,13 @@
           font-style: italic;
         }
 
-        p:first-child {
-          margin-top: 0;
-        }
-
         p {
           margin-bottom: 0;
           margin-top: .5em;
+        }
+
+        p:first-child {
+          margin-top: 0;
         }
       }
     }

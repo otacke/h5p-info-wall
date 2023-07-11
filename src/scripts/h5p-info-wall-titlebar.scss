@@ -1,4 +1,4 @@
-@import '../styles/h5p-info-wall-main';
+@import "@styles/h5p-info-wall-main";
 
 .h5p-info-wall-titlebar {
   align-items: center;
@@ -27,7 +27,7 @@
     &::before {
       color: rgba(0, 0, 0, .5);
       content: '\f002';
-      font-family: 'H5PFontAwesome4';
+      font-family: "H5PFontAwesome4", sans-serif;
       left: 1.5em;
       position: relative;
       top: 0;

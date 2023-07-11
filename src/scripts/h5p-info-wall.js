@@ -1,11 +1,10 @@
-import Dictionary from './h5p-info-wall-dictionary';
-import InfoWallContent from './h5p-info-wall-content';
-import Util from './h5p-info-wall-util';
+import InfoWallContent from '@scripts/h5p-info-wall-content';
+import Dictionary from '@services/dictionary';
+import Util from '@services/util';
 
 export default class InfoWall extends H5P.EventDispatcher {
   /**
-   * @constructor
-   *
+   * @class
    * @param {object} params Parameters passed by the editor.
    * @param {number} contentId Content's id.
    */
@@ -37,11 +36,12 @@ export default class InfoWall extends H5P.EventDispatcher {
     this.contentId = contentId;
 
     // Fill dictionary
-    Dictionary.fill(this.params.l10n);
+    this.dictionary = new Dictionary();
+    this.dictionary.fill({ l10n: this.params.l10n, a11y: this.params.a11y });
 
     // Remove empty panels
-    this.params.panels = this.params.panels.filter(panel => {
-      return panel.entries.some(entry => entry.trim() !== '');
+    this.params.panels = this.params.panels.filter((panel) => {
+      return panel.entries.some((entry) => entry.trim() !== '');
     });
 
     // Set fallback image
@@ -54,6 +54,7 @@ export default class InfoWall extends H5P.EventDispatcher {
 
     // Create content
     this.content = new InfoWallContent({
+      dictionary: this.dictionary,
       headerText: this.params.header,
       fallbackImage: fallbackImage,
       offerFilterField: this.params.behaviour.offerFilterField,
@@ -71,7 +72,7 @@ export default class InfoWall extends H5P.EventDispatcher {
 
   /**
    * Attach content to wrapper.
-   * @param {jQuery} $wrapper Content's container.
+   * @param {H5P.jQuery} $wrapper Content's container.
    */
   attach($wrapper) {
     $wrapper.get(0).classList.add('h5p-info-wall');
