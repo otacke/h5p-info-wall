@@ -44,8 +44,7 @@
                   }
                 ]
               }
-            },
-            {}
+            }
           ]
         },
         {
@@ -88,7 +87,7 @@
         },
         {
           "label": "Veikimo nustatymai",
-          "description": "Šios nuostatos leis jums valdyti, kaip veikia užduotis.",
+          "description": "Šios parinktys leis jums valdyti, kaip veikia užduotis.",
           "fields": [
             {
               "label": "Use fallback for missing images"
