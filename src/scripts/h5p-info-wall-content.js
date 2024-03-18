@@ -34,7 +34,8 @@ export default class InfoWallContent {
       const titlebar = new InfoWallTitlebar(
         {
           headerText: this.params.headerText,
-          searchBox: offerFilterField
+          searchBox: offerFilterField,
+          dictionary: this.params.dictionary
         },
         {
           onSearchChange: (query) => {
