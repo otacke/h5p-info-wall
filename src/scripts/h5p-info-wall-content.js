@@ -1,5 +1,5 @@
-import InfoWallPanel from '@scripts/h5p-info-wall-panel';
-import InfoWallTitlebar from '@scripts/h5p-info-wall-titlebar';
+import InfoWallPanel from '@scripts/h5p-info-wall-panel.js';
+import InfoWallTitlebar from '@scripts/h5p-info-wall-titlebar.js';
 import './h5p-info-wall-content.scss';
 
 export default class InfoWallContent {

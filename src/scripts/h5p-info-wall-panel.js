@@ -1,6 +1,6 @@
 import './h5p-info-wall-panel.scss';
 
-import Util from '@services/util';
+import Util from '@services/util.js';
 
 export default class InfoWallPanel {
   /**
