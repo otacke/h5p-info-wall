@@ -54,7 +54,7 @@ export default class InfoWallContent {
     this.content.appendChild(this.message);
 
     if (!this.params.properties.length || !this.params.panels.length) {
-      this.message.innerText = this.params.dictionary.get('noEntriesError');
+      this.message.innerText = this.params.dictionary.get('l10n.noEntriesError');
       this.message.classList.remove('h5p-info-wall-display-none');
       return; // No content to display
     }
@@ -154,7 +154,7 @@ export default class InfoWallContent {
       clearTimeout(this.readTimeout);
       this.readTimeout = setTimeout(() => {
         this.read(
-          this.params.dictionary.get('listChanged')
+          this.params.dictionary.get('l10n.listChanged')
             .replace('@visible', this.visiblePanels)
             .replace('@total', this.panels.length)
         );
@@ -216,7 +216,7 @@ export default class InfoWallContent {
     if (this.visiblePanels === 0) {
       this.message.classList.remove('h5p-info-wall-display-none');
       this.message.innerHTML = this.params.dictionary
-        .get('noMatchesForFilter')
+        .get('l10n.noMatchesForFilter')
         .replace(/@query/g, `<span class="h5p-info-wall-query-text">${query}</span>`);
     }
     else {
