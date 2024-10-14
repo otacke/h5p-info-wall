@@ -1,4 +1,4 @@
-@import '@styles/h5p-info-wall-main';
+@use "@styles/main";
 
 .h5p-info-wall-panel {
   display: flex;
@@ -92,7 +92,8 @@
   }
 }
 
-@media (max-width: $mobile-breakpoint) {
+/* TODO: Replace with container query */
+@media (max-width: main.$mobile-breakpoint) {
   .h5p-info-wall-panel {
     align-items: center;
     flex-direction: column-reverse;
