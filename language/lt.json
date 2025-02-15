@@ -58,17 +58,17 @@
             }
           ],
           "field": {
-            "label": "Entry items",
+            "label": "Įrašų reikšmės",
             "fields": [
               {
-                "label": "Title for panel"
+                "label": "Skydelio pavadinimas"
               },
               {
                 "label": "Paveikslėlis"
               },
               {
                 "label": "Įrašai",
-                "description": "Entries for the properties",
+                "description": "Savybių įrašų reikšmės",
                 "entity": "reikšmė",
                 "widgets": [
                   {
@@ -76,7 +76,7 @@
                   }
                 ],
                 "field": {
-                  "label": "Label to be changed automatically"
+                  "label": "Pavadinimas pasikeis automatiškai"
                 }
               },
               {
@@ -109,7 +109,7 @@
               "description": "If checked, each 2nd panel will have slightly darker background than the others."
             },
             {
-              "label": "Offer filter field",
+              "label": "Siūlyk filtro lauką",
               "description": "If checked, users will be able to filter the info wall."
             },
             {
