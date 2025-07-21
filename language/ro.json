@@ -1,0 +1,156 @@
+{
+  "semantics": [
+    {
+      "fields": [
+        {
+          "label": "Antet",
+          "description": "Antet opțional pentru peretele de informații."
+        },
+        {
+          "label": "Proprietăți",
+          "fields": [
+            {
+              "label": "Proprietăți",
+              "description": "Proprietăți pentru intrări",
+              "entity": "proprietate",
+              "widgets": [
+                {
+                  "label": "Implicit"
+                }
+              ],
+              "field": {
+                "label": "Elemente de proprietate",
+                "fields": [
+                  {
+                    "label": "Etichetă",
+                    "default": "Nedenumit"
+                  },
+                  {
+                    "label": "Afișează eticheta proprietății"
+                  },
+                  {
+                    "label": "Activează căutarea în proprietate"
+                  },
+                  {
+                    "label": "Suprascriere stil",
+                    "fields": [
+                      {
+                        "label": "Aldin"
+                      },
+                      {
+                        "label": "Cursiv"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {}
+          ]
+        },
+        {
+          "label": "Panouri",
+          "description": "Panouri pentru perete",
+          "entity": "panou",
+          "widgets": [
+            {
+              "label": "Implicit"
+            }
+          ],
+          "field": {
+            "label": "Elemente de intrare",
+            "fields": [
+              {
+                "label": "Titlu pentru panou"
+              },
+              {
+                "label": "Imagine"
+              },
+              {
+                "label": "Intrări",
+                "description": "Intrări pentru proprietăți",
+                "entity": "valoare",
+                "widgets": [
+                  {
+                    "label": "Implicit"
+                  }
+                ],
+                "field": {
+                  "label": "Etichetă ce va fi schimbată automat"
+                }
+              },
+              {
+                "label": "Cuvinte cheie suplimentare",
+                "description": "Adăugați cuvinte cheie suplimentare separate printr-un spațiu, care vor fi folosite pentru filtrare, dar nu vor fi vizibile pentru utilizator."
+              }
+            ]
+          }
+        },
+        {
+          "label": "Setări de comportament",
+          "description": "Aceste opțiuni vă vor permite să controlați cum se comportă sarcina.",
+          "fields": [
+            {
+              "label": "Folosește imagine de rezervă pentru imaginile lipsă"
+            },
+            {
+              "label": "Imagine"
+            },
+            {
+              "label": "Lățime imagine",
+              "description": "Lățime imagine în px."
+            },
+            {
+              "label": "Înălțime imagine",
+              "description": "Înălțime imagine în px."
+            },
+            {
+              "label": "Fundal alternativ pentru panouri",
+              "description": "Dacă este bifat, fiecare al doilea panou va avea un fundal puțin mai închis decât celelalte."
+            },
+            {
+              "label": "Oferă câmp de filtrare",
+              "description": "Dacă este bifat, utilizatorii vor putea filtra peretele de informații."
+            },
+            {
+              "label": "Mod pentru câmpul de filtrare",
+              "description": "Alegeți dacă filtrul ar trebui să restrângă sau să lărgească căutarea cu fiecare cuvânt cheie nou.",
+              "options": [
+                {
+                  "label": "Restrânge"
+                },
+                {
+                  "label": "Lărgește"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Interfață utilizator",
+          "fields": [
+            {
+              "label": "Niciun conținut introdus",
+              "default": "Autorul nu a introdus nimic."
+            },
+            {
+              "label": "Nicio potrivire găsită",
+              "description": "@query este un substituent și va fi înlocuit cu interogarea respectivă care a fost introdusă.",
+              "default": "Nu există potriviri pentru @query."
+            },
+            {
+              "label": "Introduceți pentru a filtra",
+              "description": "Mesaj pentru cititoarele de ecran.",
+              "default": "Introduceți o interogare pentru a filtra conținutul după intrări relevante."
+            },
+            {
+              "label": "Lista s-a modificat.",
+              "description": "Mesaj pentru cititoarele de ecran. @visible și @total sunt substituenți și vor fi înlocuiți cu valorile respective.",
+              "default": "Lista s-a modificat. Se afișează @visible din @total elemente."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
