@@ -17,7 +17,7 @@
 
     .h5p-info-wall-panel-entries {
       display: grid;
-      grid-gap: .5em;
+      gap: .5em;
       grid-template-columns: fit-content(15em) minmax(0, 1fr);
 
       .h5p-info-wall-panel-entry-label {
