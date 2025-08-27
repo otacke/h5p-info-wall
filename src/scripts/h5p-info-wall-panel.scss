@@ -39,7 +39,7 @@
       .h5p-info-wall-panel-entry-text {
         vertical-align: top;
         width: 100%;
-        word-wrap: break-word;
+        overflow-wrap: break-word;
 
         &.bold {
           font-weight: bold;
