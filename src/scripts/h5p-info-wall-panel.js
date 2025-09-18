@@ -140,7 +140,7 @@ export default class InfoWallPanel {
     return words[searchMethod]((word) => {
       return H5P.TextUtilities.fuzzyFind(
         word,
-        plainText
+        plainText,
       ).contains;
     });
   }
@@ -197,13 +197,15 @@ export default class InfoWallPanel {
     // Scale image and background according to settings
     if (imageRatio > wrapperRatio) {
       this.imageWrapperInner.style.width = `${this.imageWrapper.offsetWidth}px`;
-      this.imageWrapperInner.style.height = `${image.naturalHeight * this.imageWrapper.offsetWidth / image.naturalWidth}px`;
+      this.imageWrapperInner.style.height =
+        `${image.naturalHeight * this.imageWrapper.offsetWidth / image.naturalWidth}px`;
 
       this.backgroundImage.style.height = `${this.imageWrapper.offsetHeight}px`;
     }
     else {
       this.imageWrapperInner.style.height = `${this.imageWrapper.offsetHeight}px`;
-      this.imageWrapperInner.style.width = `${image.naturalWidth * this.imageWrapper.offsetHeight / image.naturalHeight}px`;
+      this.imageWrapperInner.style.width =
+        `${image.naturalWidth * this.imageWrapper.offsetHeight / image.naturalHeight}px`;
 
       this.backgroundImage.style.width = `${this.imageWrapper.offsetWidth}px`;
     }

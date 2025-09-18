@@ -37,7 +37,7 @@ export default class InfoWallTitlebar {
       const searchBox = document.createElement('input');
       searchBox.classList.add('h5p-info-wall-searchbox');
       searchBox.setAttribute(
-        'aria-label', this.params.dictionary.get('l10n.enterToFilter')
+        'aria-label', this.params.dictionary.get('l10n.enterToFilter'),
       );
       searchBox.addEventListener('keyup', () => {
         this.callbacks.onSearchChange(searchBox.value);

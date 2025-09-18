@@ -2,6 +2,9 @@ import InfoWallPanel from '@scripts/h5p-info-wall-panel.js';
 import InfoWallTitlebar from '@scripts/h5p-info-wall-titlebar.js';
 import './h5p-info-wall-content.scss';
 
+/** @constant {number} READ_TIMEOUT_MS Timeout before a change is read. */
+const READ_TIMEOUT_MS = 500;
+
 export default class InfoWallContent {
   /**
    * @class
@@ -35,13 +38,13 @@ export default class InfoWallContent {
         {
           headerText: this.params.headerText,
           searchBox: offerFilterField,
-          dictionary: this.params.dictionary
+          dictionary: this.params.dictionary,
         },
         {
           onSearchChange: (query) => {
             this.handleSearchChange(query);
-          }
-        }
+          },
+        },
       );
 
       this.content.appendChild(titlebar.getDOM());
@@ -84,8 +87,8 @@ export default class InfoWallContent {
           searchable: this.params.properties[index].searchInProperty,
           styling: {
             bold: this.params.properties[index].styling.bold,
-            italic: this.params.properties[index].styling.italic
-          }
+            italic: this.params.properties[index].styling.italic,
+          },
         };
       });
 
@@ -96,7 +99,7 @@ export default class InfoWallContent {
         entries: entries,
         keywords: panelParams.keywords,
         contentId: this.params.contentId,
-        modeFilterField: this.params.modeFilterField
+        modeFilterField: this.params.modeFilterField,
       });
       this.panels.push(panel);
       panelsWrapper.appendChild(panel.getDOM());
@@ -156,9 +159,9 @@ export default class InfoWallContent {
         this.read(
           this.params.dictionary.get('l10n.listChanged')
             .replace('@visible', this.visiblePanels)
-            .replace('@total', this.panels.length)
+            .replace('@total', this.panels.length),
         );
-      }, 500);
+      }, READ_TIMEOUT_MS);
     }
     this.visiblePanelsBefore = this.visiblePanels;
   }

@@ -14,7 +14,7 @@ export default class InfoWall extends H5P.EventDispatcher {
     // Defaults
     this.params = Util.extend({
       propertiesGroup: {
-        properties: []
+        properties: [],
       },
       panels: [],
       behaviour: {
@@ -23,14 +23,14 @@ export default class InfoWall extends H5P.EventDispatcher {
         imageHeight: 150,
         offerFilterField: true,
         modeFilterField: 'or',
-        alternateBackground: true
+        alternateBackground: true,
       },
       l10n: {
         'noEntriesError': 'The author did not enter anything.',
         'noMatchesForFilter': 'There are not matches for @query.',
         'enterToFilter': 'Enter a query to filter the content for relevant entries.',
-        'listChanged': 'List changed. Showing @visible of @total items.'
-      }
+        'listChanged': 'List changed. Showing @visible of @total items.',
+      },
     }, params.infoWall);
 
     this.contentId = contentId;
@@ -64,9 +64,9 @@ export default class InfoWall extends H5P.EventDispatcher {
       contentId: this.contentId,
       imageSize: {
         width: this.params.behaviour.imageWidth,
-        height: this.params.behaviour.imageHeight
+        height: this.params.behaviour.imageHeight,
       },
-      alternateBackground: this.params.behaviour.alternateBackground
+      alternateBackground: this.params.behaviour.alternateBackground,
     });
   }
 
