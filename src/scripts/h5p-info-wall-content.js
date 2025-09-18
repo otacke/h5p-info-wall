@@ -9,9 +9,13 @@ export default class InfoWallContent {
   /**
    * @class
    * @param {object} params Parameters passed by the editor.
+   * @param {object} callbacks Callbacks for content.
    */
-  constructor(params = {}) {
+  constructor(params = {}, callbacks = {}) {
     this.params = params;
+
+    this.callbacks = {};
+    this.callbacks.onResized = callbacks.onResized || (() => {});
 
     this.content = document.createElement('div');
     this.content.classList.add('h5p-info-wall-content');
@@ -180,6 +184,8 @@ export default class InfoWallContent {
         }
       });
     }
+
+    this.callbacks.onResized();
   }
 
   /**

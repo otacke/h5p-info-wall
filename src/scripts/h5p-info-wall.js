@@ -53,21 +53,28 @@ export default class InfoWall extends H5P.EventDispatcher {
       null;
 
     // Create content
-    this.content = new InfoWallContent({
-      dictionary: this.dictionary,
-      headerText: this.params.header,
-      fallbackImage: fallbackImage,
-      offerFilterField: this.params.behaviour.offerFilterField,
-      modeFilterField: this.params.behaviour.modeFilterField,
-      panels: this.params.panels,
-      properties: this.params.propertiesGroup.properties,
-      contentId: this.contentId,
-      imageSize: {
-        width: this.params.behaviour.imageWidth,
-        height: this.params.behaviour.imageHeight,
+    this.content = new InfoWallContent(
+      {
+        dictionary: this.dictionary,
+        headerText: this.params.header,
+        fallbackImage: fallbackImage,
+        offerFilterField: this.params.behaviour.offerFilterField,
+        modeFilterField: this.params.behaviour.modeFilterField,
+        panels: this.params.panels,
+        properties: this.params.propertiesGroup.properties,
+        contentId: this.contentId,
+        imageSize: {
+          width: this.params.behaviour.imageWidth,
+          height: this.params.behaviour.imageHeight,
+        },
+        alternateBackground: this.params.behaviour.alternateBackground,
       },
-      alternateBackground: this.params.behaviour.alternateBackground,
-    });
+      {
+        onResized: () => {
+          this.trigger('resize');
+        },
+      },
+    );
   }
 
   /**
