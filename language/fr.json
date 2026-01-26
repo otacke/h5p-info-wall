@@ -80,8 +80,8 @@
                 }
               },
               {
-                "label": "Additional keywords",
-                "description": "Add additional keywords separated by a blank space that will be used for filtering but not be visible to the user."
+                "label": "Mots-clés supplémentaires",
+                "description": "Ajouter des mots-clés supplémentaires séparés par un espace qui seront utilisés pour le filtrage mais ne seront pas visibles par l'utilisateur."
               }
             ]
           }
@@ -113,11 +113,11 @@
               "description": "Si cette case est cochée, les utilisateurs pourront filtrer le mur d'informations."
             },
             {
-              "label": "Mode for filter field",
-              "description": "Choose whether the filter should narrow down or broaden the search with every new keyword.",
+              "label": "Mode du champ de filtre",
+              "description": "Choisir si le filtre doit restreindre ou élargir la recherche à chaque nouveau mot-clé.",
               "options": [
                 {
-                  "label": "Narrow down"
+                  "label": "Restreindre"
                 },
                 {
                   "label": "Broaden"
