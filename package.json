@@ -20,7 +20,6 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.28.6",
-    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
     "@babel/plugin-transform-destructuring": "^7.28.5",
     "@babel/preset-env": "^7.28.6",
     "babel-loader": "^10.0.0",
