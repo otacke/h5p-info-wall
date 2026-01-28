@@ -1,15 +1,13 @@
-@use "@styles/main";
-
 .h5p-info-wall-panel {
+  color: var(--h5p-theme-text-primary);
   display: flex;
   flex-direction: row;
-  gap: 1em;
+  gap: var(--h5p-theme-spacing-s);
   opacity: 1;
-  padding: 1em;
-  width: calc(100% - 2em);
+  padding: var(--h5p-theme-spacing-s);
 
   &.h5p-info-wall-background {
-    background-color: rgba(0, 0, 0, .025);
+    background: var(--h5p-theme-contrast-cta-light);
   }
 
   .h5p-info-wall-panel-entries-wrapper {
@@ -17,8 +15,8 @@
 
     .h5p-info-wall-panel-entries {
       display: grid;
-      gap: .5em;
-      grid-template-columns: fit-content(15em) minmax(0, 1fr);
+      gap: var(--h5p-theme-spacing-xxs);
+      grid-template-columns: fit-content(calc(15 * var(--h5p-theme-spacing-s))) minmax(0, 1fr);
 
       .h5p-info-wall-panel-entry-label {
         vertical-align: top;
@@ -51,7 +49,7 @@
 
         p {
           margin-bottom: 0;
-          margin-top: .5em;
+          margin-top: var(--h5p-theme-spacing-xxs);
         }
 
         p:first-child {
@@ -95,15 +93,14 @@
   }
 }
 
-/* TODO: Replace with container query */
-@media (max-width: main.$mobile-breakpoint) {
+@container h5p-info-wall (width < 600px) {
   .h5p-info-wall-panel {
     align-items: center;
     flex-direction: column-reverse;
-    font-size: 1.25em;
+    font-size: var(--h5p-theme-font-size-l);
 
     .h5p-info-wall-panel-image-wrapper-outer {
-      margin-bottom: .5em;
+      margin-bottom: var(--h5p-theme-spacing-xxs);
     }
   }
 }

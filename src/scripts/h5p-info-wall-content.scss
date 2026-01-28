@@ -1,9 +1,8 @@
 .h5p-info-wall-content {
-  min-width: 20em;
-  width: 100%;
-
   .h5p-info-wall-message {
-    width: 100%;
+    color: var(--h5p-theme-text-primary);
+    font-size: var(--h5p-theme-font-size-m);
+    padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-m);
     text-align: center;
 
     &.h5p-info-wall-display-none {
