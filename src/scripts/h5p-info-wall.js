@@ -1,6 +1,7 @@
 import InfoWallContent from '@scripts/h5p-info-wall-content.js';
 import Dictionary from '@services/dictionary.js';
 import Util from '@services/util.js';
+import '@styles/h5p-info-wall.scss';
 
 export default class InfoWall extends H5P.EventDispatcher {
   /**
